@@ -236,15 +236,19 @@ def get_csv_documents():
     docs_path = "all_csv_documents"
     documents = []
     for file in os.listdir(docs_path):
-        # Correctly check for both CSV and Excel file extensions
         if file.endswith(('.csv', '.xlsx')):
             full_path = os.path.join(docs_path, file)
-            # Load the file based on its extension
-            if file.endswith('.csv'):
-                df = pd.read_csv(full_path)
-            elif file.endswith('.xlsx'):
-                df = pd.read_excel(full_path)
-            documents.append((file, df))
+            try:
+                if file.endswith('.csv'):
+                    # Skip lines with tokenizing errors
+                    df = pd.read_csv(full_path, on_bad_lines='skip')
+                    # Alternatively, specify the delimiter if not a comma, e.g.:
+                    # df = pd.read_csv(full_path, sep=';', on_bad_lines='skip')
+                elif file.endswith('.xlsx'):
+                    df = pd.read_excel(full_path)
+                documents.append((file, df))
+            except Exception as e:
+                print(f"Error reading {file}: {e}")
     return documents
 
 # Side panel for mode selection and document selection
