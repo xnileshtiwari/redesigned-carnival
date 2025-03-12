@@ -351,8 +351,8 @@ if (st.session_state.previous_mode != st.session_state.chat_mode or
 # Predefined sample prompts
 pdf_prompts = [
     "📄 What are the payment terms mentioned in the TNT contract?",
-    "📑 Summarize the main points in the agreement",
-    "🔍 Find all references to deadlines in the document",
+    "📑 Summarize the main points in the GLS Bergamo National Italy Contract",
+    "🔍 What additional services can be added to the basic shipping service?",
     "⚖️ What are the legal obligations mentioned?"
 ]
 
