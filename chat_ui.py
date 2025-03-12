@@ -231,14 +231,21 @@ pdf_documents = [
 ]
 
 # Function to get available CSV documents
-def get_csv_documents():
-    # Change this path to where your CSV documents are stored
-    csv_path = "all_csv_documents"
-    csv_files = []
-    for file in os.listdir(csv_path):
-        if file.endswith('.csv', '.xlsx'):
-            csv_files.append((file, os.path.join(csv_path, file)))
-    return csv_files
+def get_documents():
+    # Change this path to where your CSV and Excel documents are stored
+    docs_path = "all_csv_documents"
+    documents = []
+    for file in os.listdir(docs_path):
+        # Correctly check for both CSV and Excel file extensions
+        if file.endswith(('.csv', '.xlsx')):
+            full_path = os.path.join(docs_path, file)
+            # Load the file based on its extension
+            if file.endswith('.csv'):
+                df = pd.read_csv(full_path)
+            elif file.endswith('.xlsx'):
+                df = pd.read_excel(full_path)
+            documents.append((file, df))
+    return documents
 
 # Side panel for mode selection and document selection
 with st.sidebar:
