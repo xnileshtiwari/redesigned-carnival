@@ -71,8 +71,6 @@ This project is a Document Chat Assistant that allows users to interact with PDF
 
 - Ensure your API keys are correctly set in the `.env` file.
 - Verify that all required packages are installed.
-- Check that your Google API key has access to the Gemini Pro model.
-- Make sure your LlamaCloud index is accessible with your API key.
 
 
 ## License
