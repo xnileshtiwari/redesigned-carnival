@@ -205,8 +205,8 @@ if "selected_csv_name" not in st.session_state:  # Added to store the CSV file n
 if "previous_mode" not in st.session_state:
     st.session_state.previous_mode = "PDF"
 
-if "previous_csv" not in st.session_state:
-    st.session_state.previous_csv = None
+if "previous_csv_name" not in st.session_state:  # Compare CSV by name rather than DataFrame
+    st.session_state.previous_csv_name = None
 
 if "feedback_given" not in st.session_state:
     st.session_state.feedback_given = {}
@@ -244,8 +244,6 @@ def get_csv_documents():
                 if file.endswith('.csv'):
                     # Skip lines with tokenizing errors
                     df = pd.read_csv(full_path, on_bad_lines='skip')
-                    # Alternatively, specify the delimiter if not a comma, e.g.:
-                    # df = pd.read_csv(full_path, sep=';', on_bad_lines='skip')
                 elif file.endswith('.xlsx'):
                     df = pd.read_excel(full_path)
                 documents.append((file, df))
@@ -355,12 +353,12 @@ with st.sidebar:
 # Check if mode or CSV selection has changed
 if (st.session_state.previous_mode != st.session_state.chat_mode or 
     (st.session_state.chat_mode == "CSV" and 
-     st.session_state.previous_csv != st.session_state.selected_csv)):
+     st.session_state.previous_csv_name != st.session_state.selected_csv_name)):
     # Reset chat
     st.session_state.messages = []
     st.session_state.feedback_given = {}
     st.session_state.previous_mode = st.session_state.chat_mode
-    st.session_state.previous_csv = st.session_state.selected_csv
+    st.session_state.previous_csv_name = st.session_state.selected_csv_name
 
 # Predefined sample prompts
 pdf_prompts = [
@@ -408,7 +406,6 @@ if st.session_state.chat_mode == "PDF":
     st.info("🔍 Currently in PDF Document Chat Mode")
 else:
     if st.session_state.selected_csv is not None:
-        # Use the stored CSV file name instead of os.path.basename on a DataFrame
         csv_name = st.session_state.selected_csv_name
         st.info(f"📊 Currently analyzing: {csv_name}")
     else:
@@ -482,7 +479,6 @@ if user_input:
             if st.session_state.selected_csv is not None:
                 status.update(label=f"Analyzing CSV data from {st.session_state.selected_csv_name}...", state="running")
                 thread_id = "conversation_1"
-
                 response = run_csv_chat_agent(st.session_state.selected_csv, user_input, thread_id)
                 status.update(label="✅ Analysis complete", state="complete")
             else:
