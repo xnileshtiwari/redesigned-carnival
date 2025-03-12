@@ -4,7 +4,7 @@ import os
 import json
 from llm import get_completion
 from csv_agent import run_csv_chat_agent
-
+import pandas
 # Load environment variables from a .env file
 dotenv.load_dotenv()
 # Page configuration
