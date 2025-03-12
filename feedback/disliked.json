@@ -1,0 +1,12 @@
+[
+  {
+    "user_input": "What is DHL International Contract.pdf?",
+    "assistant_response": "Based on the search results, \"DHL International Contract.pdf\" appears to be a contract document related to DHL Express international services. The document includes information such as:\n\n*   **TIME DEFINITE** and **DAY DEFINITE** sections, possibly outlining delivery timeframes.\n*   **Ragione Sociale ITALEEN I.H.**, which could be the company or entity associated with the contract.\n*   **SERVICES AND SURCHARGES**, suggesting details about the services offered and any additional charges.\n*   Rate information based on weight.",
+    "timestamp": "2025-03-12 03:10:32"
+  },
+  {
+    "user_input": "\ud83d\udd22 Calculate the average order value",
+    "assistant_response": "The average order value is \u20ac43.65.",
+    "timestamp": "2025-03-12 03:11:07"
+  }
+]

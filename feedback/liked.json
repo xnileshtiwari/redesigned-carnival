@@ -1,0 +1,7 @@
+[
+  {
+    "user_input": "\ud83d\udd0d Find all references to deadlines in the document",
+    "assistant_response": "The documents mention deadlines in the context of:\n\n1.  **DHL International Contract.pdf:** This document contains a section titled \"TIME DEFINITE\" and \"DAY DEFINITE\".\n2.  **Fedex International Contract.pdf:** Mentions weight and zone details.\n\nPlease note that the tool only retrieves documents that contain the word \"deadlines\". It does not extract the specific deadlines from the documents.",
+    "timestamp": "2025-03-12 03:09:43"
+  }
+]
