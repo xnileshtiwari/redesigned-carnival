@@ -231,7 +231,7 @@ pdf_documents = [
 ]
 
 # Function to get available CSV documents
-def get_documents():
+def get_csv_documents():
     # Change this path to where your CSV and Excel documents are stored
     docs_path = "all_csv_documents"
     documents = []
