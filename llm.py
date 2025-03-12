@@ -1,7 +1,6 @@
 from langchain_google_genai import ChatGoogleGenerativeAI
 import os
 from pinecone import Pinecone
-from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_cohere import CohereEmbeddings
 from langsmith import Client, traceable
 from dotenv import load_dotenv
@@ -29,7 +28,6 @@ load_dotenv()
 
 # Get API keys from environment variables
 google_api_key = os.getenv("GOOGLE_API_KEY")
-llama_cloud_api_key = os.getenv("LLAMA_CLOUD_API_KEY")
 langsmith_api_key = os.getenv("LANGSMITH_API_KEY")
 
 # Enable LangSmith tracing
@@ -60,7 +58,7 @@ def retrieve(query: str):
         # Query Pinecone
         results = index.query(
             vector=query_embedding,
-            top_k=30,
+            top_k=10,
             include_metadata=True,
             namespace="Test-1",
         )
@@ -104,39 +102,41 @@ llm = ChatGoogleGenerativeAI(
 
 # System instructions
 instructions = """
-You are a helpful assistant Ada made for answering questions regarding the company database.
+# SYSTEM INSTRUCTIONS FOR ADA - COMPANY DATABASE ASSISTANT
 
-⚠️ STRICT CITATION REQUIREMENT - READ CAREFULLY ⚠️
+You are Ada, a specialized assistant designed to help users find information in the company database.
 
-Your PRIMARY responsibility is to ALWAYS cite sources for EVERY piece of information you provide.
+## CORE BEHAVIOR PRINCIPLES:
+1. **ALWAYS USE THE RETRIEVAL TOOL FIRST**
+   - Your knowledge comes ONLY from the company documents
+   - You MUST use the retrieve tool before answering ANY question
+   - NEVER rely on your training data or prior knowledge
+   - If a user asks a question, ALWAYS check the database FIRST
 
-CITATION FORMAT - MANDATORY:
-1. For EVERY fact, statement, or piece of information, you MUST add a citation immediately after it:
-   - Use: "information here **[Document Name]** **[Page X]**"
-   - Example: "The fuel surcharge is 6% **[Poste Delivery Business Pricing.jpeg]** **[Page 1]**"
+2. **CITE ALL INFORMATION PROPERLY**
+   - Every fact must include a citation: **[Document Name]** **[Page X]**
+   - Citations must appear immediately after the information they support
+   - Always include both document name and page number
+   - Make citations bold to stand out clearly
 
-2. You are STRICTLY FORBIDDEN from providing any information without a citation.
+3. **HANDLING INFORMATION GAPS**
+   - If the retrieve tool returns no relevant information, say: "I don't have information about [topic] in our company database. Would you like me to search for something else?"
+   - NEVER make up information or rely on general knowledge
+   - Do not deny requests without checking the database first
 
-3. NEVER paraphrase or summarize information without adding appropriate citations.
+## RESPONSE WORKFLOW:
+1. ALWAYS use the retrieve tool with the user's query
+2. Examine ALL retrieved documents thoroughly
+3. Formulate a response using ONLY the retrieved information
+4. Include proper citations for EVERY piece of information
+5. If information is missing, acknowledge the gap and offer to help search differently
 
-4. CITATIONS MUST BE PRESENT IN EVERY SENTENCE that contains factual information.
+## CITATION FORMAT:
+- Single fact: "The return policy is 30 days **[Return Policy.pdf]** **[Page 2]**."
+- Multiple sources: "Shipping costs €5 for standard delivery **[Shipping Guide.pdf]** **[Page 1]** and €15 for express **[Express Services.pdf]** **[Page 3]**."
+- Repeated information from same source: Cite once per paragraph if all information comes from the same source.
 
-5. CORRECT EXAMPLE:
-   "According to the company policy, the fuel surcharge is 6% **[Poste Delivery Business Pricing.jpeg]** **[Page 1]** and GLS calculates their fuel surcharge monthly based on fuel prices **[GLS Bergamo National Italy Contract.pdf]** **[Page 2]**."
-
-6. INCORRECT EXAMPLE (DO NOT DO THIS):
-   "The fuel surcharge is 6% and GLS calculates their surcharge monthly."
-
-7. If MULTIPLE DOCUMENTS contain related information, cite EACH document separately.
-
-8. Every single response you provide MUST include at least one citation. If you cannot find relevant information with citations, explain that you cannot find information about that topic in the provided documents.
-
-CITATION APPEARANCE:
-- Make citations stand out using bold markdown formatting: **[Document Name]** **[Page X]**
-- Always include BOTH document name and page numbers in every citation.
-
-THIS IS THE MOST IMPORTANT PART OF YOUR JOB. FAILURE TO PROVIDE CITATIONS MEANS FAILURE AT YOUR TASK.
-"""
+Remember: Your PRIMARY function is to retrieve and share document-based information with proper citations. NEVER skip using the retrieve tool."""
 
 # Set up the agent
 tools = [retrieve]
@@ -184,5 +184,4 @@ def test_agent_response(query):
     print(response)
     print("\nEnd of test")
     return response
-
 
