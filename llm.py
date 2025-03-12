@@ -1,12 +1,28 @@
 from langchain_google_genai import ChatGoogleGenerativeAI
 import os
+from pinecone import Pinecone
+from langchain_google_genai import GoogleGenerativeAIEmbeddings
+from langchain_cohere import CohereEmbeddings
 from langsmith import Client, traceable
 from dotenv import load_dotenv
-from llama_index.indices.managed.llama_cloud import LlamaCloudIndex
 from langchain_core.tools import tool
 from langgraph.prebuilt import create_react_agent
 from langgraph.checkpoint.memory import MemorySaver
 import uuid
+from pydantic import BaseModel
+from typing import List, Dict, Tuple
+
+
+load_dotenv()
+class PineconeVectorStore(BaseModel):
+    index_name: str
+    query: str
+
+class QueryResult(BaseModel):
+    text: str
+    metadata: Dict
+    score: float
+
 
 # Load environment variables from .env file
 load_dotenv()
@@ -21,43 +37,64 @@ os.environ["LANGSMITH_TRACING"] = "true"
 custom_client = Client(api_key=langsmith_api_key)
 
 # Initialize LlamaCloud index
-index = LlamaCloudIndex(
-    name="additional-dolphin-2025-03-08",
-    project_name="Default",
-    organization_id="f5bf6d72-3e97-4758-b1e3-1dbb30c1ee4f",
-    api_key=llama_cloud_api_key,
-    show_progress=True
-)
 
 # Define the retrieval tool
 @tool
 def retrieve(query: str):
-    """This is a tool that contains all the business documents it contains informations like contracts, policies, etc."""
-    retriever = index.as_retriever()
-    nodes = retriever.retrieve(query)
-    
-    # Format documents with proper source attribution for citation
-    formatted_docs = []
-    for i, node in enumerate(nodes):
-        # Extract metadata
-        source = node.metadata.get('source', 'Unknown')
-        page = node.metadata.get('page_label', 'Unknown')
-        file_name = node.metadata.get('file_name', 'Unknown')
-        content = node.text
+    """This tool contains all the information You are ever going to be asked about."""
+    try:
+        # Initialize embeddings and Pinecone
+        embeddings = CohereEmbeddings(
+                model="embed-multilingual-v3.0",
+            )
         
-        # Format as a document with clear citation information
-        doc_entry = (
-            f"Document {i+1}:\n\n"
-            f"{content}\n\n"
-            f"📝 CITATION REQUIRED: **[{file_name}]** | Page: **[{page}]**"
+        pc = Pinecone(api_key=os.getenv("PINECONE_API_KEY"))
+        index_name = "italian-pdf-docs"
+        index = pc.Index(index_name)
+        
+        # Update trending count
+        
+        # Get query embedding
+        query_embedding = embeddings.embed_query(query)
+        
+        # Query Pinecone
+        results = index.query(
+            vector=query_embedding,
+            top_k=10,
+            include_metadata=True,
+            namespace="Test-1",
         )
-        formatted_docs.append(doc_entry)
-    
-    # Add citation reminders before and after the document content
-    citation_reminder = "\n⚠️ IMPORTANT: You MUST cite ALL information using the format: **[Document Name]** **[Page X]** after EVERY fact you mention ⚠️\n"
-    
-    # Join documents with clear separators
-    return citation_reminder + "\n\n" + "-" * 40 + "\n\n".join(formatted_docs) + "\n\n" + "-" * 40 + citation_reminder
+        
+        # Extract results and metadata
+        query_results = []
+        for match in results["matches"]:
+            text = match["metadata"].get("text", "")
+            metadata = {
+                "page": match["metadata"].get("page", "Unknown"),
+                "score": match["score"],
+                # Add any other metadata fields you want to track
+                "chunk_index": match["metadata"].get("chunk_index", "Unknown"),
+                "filename": match["metadata"].get("filename", "Unknown"),
+            }
+            query_results.append(QueryResult(text=text, metadata=metadata, score=match["score"]))
+        
+        # Print results for verification
+        
+        # Return both texts and full metadata
+        texts = [result.text for result in query_results]
+        metadata_list = [result.metadata for result in query_results]
+        return texts, metadata_list
+        
+    except Exception as e:
+        print(f"An error occurred in pinecone vector database query: {e}")
+
+
+
+
+
+
+
+
 
 # Initialize the LLM
 llm = ChatGoogleGenerativeAI(
@@ -149,13 +186,3 @@ def test_agent_response(query):
     return response
 
 
-# Test the formatting of retrieved documents
-if __name__ == "__main__":
-    print("\n\nTesting document retrieval formatting:")
-    test_query = "What are the Surcharges for fuel?"
-    result = retrieve(test_query)
-    print(result)
-    print("\n\nEnd of retrieval test")
-    
-    # Test the agent's response
-    test_agent_response("What are the Surcharges for fuel?")
