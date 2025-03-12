@@ -4,7 +4,7 @@ import os
 import json
 from llm import get_completion
 from csv_agent import run_csv_chat_agent
-import pandas as pd
+
 # Load environment variables from a .env file
 dotenv.load_dotenv()
 # Page configuration
@@ -199,14 +199,11 @@ if "chat_mode" not in st.session_state:
 if "selected_csv" not in st.session_state:
     st.session_state.selected_csv = None
 
-if "selected_csv_name" not in st.session_state:  # Added to store the CSV file name
-    st.session_state.selected_csv_name = None
-
 if "previous_mode" not in st.session_state:
     st.session_state.previous_mode = "PDF"
 
-if "previous_csv_name" not in st.session_state:  # Compare CSV by name rather than DataFrame
-    st.session_state.previous_csv_name = None
+if "previous_csv" not in st.session_state:
+    st.session_state.previous_csv = None
 
 if "feedback_given" not in st.session_state:
     st.session_state.feedback_given = {}
@@ -230,26 +227,18 @@ pdf_documents = [
     "picking-list by product.pdf",
     "GLS Bergamo International Contract.pdf",
     "Fedex International Contract.pdf"
+
 ]
 
 # Function to get available CSV documents
 def get_csv_documents():
-    # Change this path to where your CSV and Excel documents are stored
-    docs_path = "all_csv_documents"
-    documents = []
-    for file in os.listdir(docs_path):
-        if file.endswith(('.csv', '.xlsx')):
-            full_path = os.path.join(docs_path, file)
-            try:
-                if file.endswith('.csv'):
-                    # Skip lines with tokenizing errors
-                    df = pd.read_csv(full_path, on_bad_lines='skip')
-                elif file.endswith('.xlsx'):
-                    df = pd.read_excel(full_path)
-                documents.append((file, df))
-            except Exception as e:
-                print(f"Error reading {file}: {e}")
-    return documents
+    # Change this path to where your CSV documents are stored
+    csv_path = "/home/xnileshtiwari/vscode/new-gemini-upload-file/DATABASE2/"
+    data_files = []
+    for file in os.listdir(csv_path):
+        if file.endswith('.csv') or file.endswith('.xlsx'):
+            data_files.append((file, os.path.join(csv_path, file)))
+    return data_files
 
 # Side panel for mode selection and document selection
 with st.sidebar:
@@ -272,7 +261,7 @@ with st.sidebar:
     
     with col2:
         csv_button = st.button(
-            "📊 CSV", 
+            "📊 Data", 
             key="csv_button",
             use_container_width=True,
             type="primary" if st.session_state.chat_mode == "CSV" else "secondary"
@@ -324,22 +313,21 @@ with st.sidebar:
             st.markdown(f'<div class="pdf-list-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg> {doc}</div>', unsafe_allow_html=True)
         st.markdown('</div>', unsafe_allow_html=True)
     else:  # CSV mode
-        st.subheader("Select CSV Document")
+        st.subheader("Select Data File (CSV/Excel)")
         csv_documents = get_csv_documents()
         if csv_documents:
             csv_names = [doc[0] for doc in csv_documents]
             csv_paths = [doc[1] for doc in csv_documents]
             selected_csv_name = st.selectbox(
-                "Choose a CSV file",
+                "Choose a data file",
                 options=csv_names,
                 index=0,
                 key="csv_selector"
             )
             selected_index = csv_names.index(selected_csv_name)
             st.session_state.selected_csv = csv_paths[selected_index]
-            st.session_state.selected_csv_name = selected_csv_name  # Store the file name separately
         else:
-            st.warning("No CSV documents found.")
+            st.warning("No data files found.")
             st.session_state.selected_csv = None
 
     st.divider()
@@ -353,17 +341,17 @@ with st.sidebar:
 # Check if mode or CSV selection has changed
 if (st.session_state.previous_mode != st.session_state.chat_mode or 
     (st.session_state.chat_mode == "CSV" and 
-     st.session_state.previous_csv_name != st.session_state.selected_csv_name)):
+     st.session_state.previous_csv != st.session_state.selected_csv)):
     # Reset chat
     st.session_state.messages = []
     st.session_state.feedback_given = {}
     st.session_state.previous_mode = st.session_state.chat_mode
-    st.session_state.previous_csv_name = st.session_state.selected_csv_name
+    st.session_state.previous_csv = st.session_state.selected_csv
 
 # Predefined sample prompts
 pdf_prompts = [
     "📄 What are the payment terms mentioned in the TNT contract?",
-    "⛽ What are the Surcharges for fuel?",
+    "📑 Summarize the main points in the agreement",
     "🔍 Find all references to deadlines in the document",
     "⚖️ What are the legal obligations mentioned?"
 ]
@@ -405,8 +393,8 @@ st.markdown('<div class="chat-container">', unsafe_allow_html=True)
 if st.session_state.chat_mode == "PDF":
     st.info("🔍 Currently in PDF Document Chat Mode")
 else:
-    if st.session_state.selected_csv is not None:
-        csv_name = st.session_state.selected_csv_name
+    if st.session_state.selected_csv:
+        csv_name = os.path.basename(st.session_state.selected_csv)
         st.info(f"📊 Currently analyzing: {csv_name}")
     else:
         st.warning("⚠️ Please select a CSV file from the sidebar")
@@ -476,9 +464,10 @@ if user_input:
             response = get_completion(user_input, thread_id_1)
             status.update(label="✅ Analysis complete", state="complete")
         else:  # CSV mode
-            if st.session_state.selected_csv is not None:
-                status.update(label=f"Analyzing CSV data from {st.session_state.selected_csv_name}...", state="running")
+            if st.session_state.selected_csv:
+                status.update(label=f"Analyzing CSV data from {os.path.basename(st.session_state.selected_csv)}...", state="running")
                 thread_id = "conversation_1"
+
                 response = run_csv_chat_agent(st.session_state.selected_csv, user_input, thread_id)
                 status.update(label="✅ Analysis complete", state="complete")
             else:
