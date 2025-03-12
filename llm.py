@@ -60,7 +60,7 @@ def retrieve(query: str):
         # Query Pinecone
         results = index.query(
             vector=query_embedding,
-            top_k=10,
+            top_k=30,
             include_metadata=True,
             namespace="Test-1",
         )
