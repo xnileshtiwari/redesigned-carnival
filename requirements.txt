@@ -10,3 +10,4 @@ langgraph
 langchain_experimental
 tabulate
 openpyxl
+pinecone 
