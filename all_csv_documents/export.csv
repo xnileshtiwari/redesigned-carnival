@@ -1,0 +1,224 @@
+Tipo,Stato,ID ordine,Destinatario,Indirizzo,Città,Provincia,Codice Postale,Paese,Numero di telefono,Data etichetta generata,Data importazione,E-mail,Metodo di pagamento,Nome oggetto,SKU,Corriere,Quantità oggetti,Totale valore ordine,Valore oggetto,Totale valore oggetti,Numero pacchi,Numero di tracciamento,Data ordine consegnato
+Order,In entrata,29120,Luigi Onori,Via Cristoforo Colombo 19a,Sabaudia,LT,04016,IT,3389299825,,26/02/2025,onoriluigi@alice.it,PayPal,,,Poste Delivery Business,1,18.69,,,1,,
+Item,,29120,,,,,,,,,,,,Figliata di Bufala - Mozzarella con mozzarelline dentro | Di Benedetto - 500 gr - Formato 500 gr,Figliata di bufala - 500 gr,,1,,10.8,10.8,,,
+Order,Consegnato,29119,Carmine Magnotta,Via Gallareto 16,Montegrosso d’Asti,AT,14048,IT,3341397691,25/02/2025,25/02/2025,magnottac@alice.it,Carta di credito o debito,,,TNT Italy,2,47.97,,,1,WS77036015,27/02/2025
+Item,,29119,,,,,,,,,,,,Provola di Agerola Affumicata - Monti Lattari | Ruocco - 400 gr - Formato 400 gr,Provola - 400 gr,,2,,6.79,13.58,,,
+Order,Consegnato,29118,Simona Pierri,Innocenzo Regazzoni 14,Como,CO,22100,IT,3931189185,25/02/2025,25/02/2025,pierrivincenzo48@gmail.com,In contanti alla consegna,,,TNT Italy,2,27.28,,,1,WS77036016,27/02/2025
+Item,,29118,,,,,,,,,,,,Provola di Agerola Affumicata - Monti Lattari | Ruocco - 600 gr - Formato 600 gr,Provola - 600 gr,,1,,9.69,9.69,,,
+Item,,29118,,,,,,,,,,,,Fiordilatte di Agerola - Mozzarella campana dei Monti Lattari | Ruocco - 600 gr - Formato 600 gr,Fiordilatte - 600 gr,,1,,9.69,9.69,,,
+Item,,29117,,,,,,,,,,,,Lip gloss naturale - Vernissage - 27 colori | Neve Cosmetics - Allegoria della Primavera - Colore Allegoria della Primavera,C-LGN-NC-B1,,2,,7.9,15.8,,,
+Item,,29117,,,,,,,,,,,,Lip gloss naturale - Vernissage - 27 colori | Neve Cosmetics - Persistence of Memory - Colore Persistence of Memory,C-LGN-NC-B1,,1,,7.9,7.9,,,
+Item,,29117,,,,,,,,,,,,Idrolato di Fiori d'Arancio bio | La Saponaria,C-IFA-LS-B1,,1,,3.7,3.7,,,
+Item,,29117,,,,,,,,,,,,Smagliature - Siero d'urto contro le smagliature bianche & rosse | La Saponaria,C-B3-LS-SSU,,1,,12.6,12.6,,,
+Item,,29117,,,,,,,,,,,,Lip gloss naturale - Vernissage - 27 colori | Neve Cosmetics - Arearea - Colore Arearea,C-LGN-NC-B1,,1,,7.9,7.9,,,
+Item,,29117,,,,,,,,,,,,Siero Bioattivo Uniformante per macchie sul viso  | La Saponaria,C-SBU-LS-D1,,1,,11.8,11.8,,,
+Item,,29117,,,,,,,,,,,,Lip gloss naturale - Vernissage - 27 colori | Neve Cosmetics - Dama con l'Ermellino - Colore Dama con l'Ermellino,C-LGN-NC-B1,,1,,7.9,7.9,,,
+Order,Consegnato,29116,Maria Rosaria Giordano,Via Nostra Signora di Lourdes 100,Roma,RM,00167,IT,3313893800,25/02/2025,25/02/2025,giordmar@live.it,PayPal,,,TNT Italy,1,24.39,,,1,WS77033765,27/02/2025
+Item,,29116,,,,,,,,,,,,Burro chiarificato della Valle d'Aosta - Beuro Colò - Ghee | Duclos - 1 Kg - Formato 1 Kg,Burro chiarificato - 1 Kg,,1,,16.49,16.49,,,
+Order,Consegnato,29115,chiara ranavolo,Frazione Villaretti 12,Torre Bormida,CN,12050,IT,3395799884,25/02/2025,25/02/2025,chiara.ranavolo@libero.it,Carta di credito o debito,,,Poste Delivery Business,2,36.1,,,1,3UW0EX4000525,27/02/2025
+Item,,29115,,,,,,,,,,,,Fiordilatte di Agerola - Mozzarella campana dei Monti Lattari | Ruocco - 600 gr - Formato 600 gr,Fiordilatte - 600 gr,,1,,8.24,8.24,,,
+Order,Consegnato,29114,Arrigo Uberti Foppa,Viale Europa 41C2,Crema,CR,26013,IT,3397324875,24/02/2025,24/02/2025,postmaster@ubertifoppa.it,Carta di credito o debito,,,TNT Italy,2,53.36,,,1,WS76965249,27/02/2025
+Item,,29114,,,,,,,,,,,,Bleu d'Aoste - Formaggio erborinato di vacca valdostana | Duclos - ~500 gr - Formato ~500 gr,Bleu d'Aoste - 500 gr,,1,,11.29,11.29,,,
+Item,,29113,,,,,,,,,,,,Provola di Agerola Affumicata - Monti Lattari | Ruocco - 400 gr - Formato 400 gr,Provola - 400 gr,,3,,6.79,20.37,,,
+Order,Consegnato,29112,Gianni D'ORIANO,Via Salvatore Aldisio 143,Corleone,PA,90034,IT,3519782750,23/02/2025,21/02/2025,rallone@hotmail.com,PayPal,,,Poste Delivery Business,5,137.19,,,1,3UW0EX4000524,26/02/2025
+Item,,29112,,,,,,,,,,,,Provola di Agerola Affumicata - Monti Lattari | Ruocco - 3 Kg - Formato 3 Kg,Provola - 3 Kg,,1,,45.45,45.45,,,
+Item,,29112,,,,,,,,,,,,Fiordilatte di Agerola - Mozzarella campana dei Monti Lattari | Ruocco - 3 Kg - Formato 3 Kg,Fiordilatte - 3 Kg,,1,,45.44,45.44,,,
+Item,,29112,,,,,,,,,,,,Burro fresco di Agerola - Per colazione | Ruocco - 250 gr - Formato 250 gr,Burro - 250 gr,,1,,,,,,
+Item,,29111,,,,,,,,,,,,Burro chiarificato della Valle d'Aosta - Beuro Colò - Ghee | Duclos - 250 gr - Formato 250 gr,Burro chiarificato - 250 gr,,2,,5.08,10.16,,,
+Order,Consegnato,29110,Giovanni Palmieri,Via Acquaviva 208,Caserta,CE,81100,IT,3381066310,24/02/2025,20/02/2025,giovannipalmieri31@yahoo.it,In contanti alla consegna,,,TNT Italy,4,88.15,,,1,WS76965456,26/02/2025
+Item,,29110,,,,,,,,,,,,Alici sotto sale di Cetara | Nettuno - 420 gr - Formato 420 gr,Alici Sotto Sale - 420 g,,1,,8.42,8.42,,,
+Item,,29110,,,,,,,,,,,,Tonno di Tonnara sott'olio di oliva | Nettuno - 300 gr - Formato 300 gr,A-DS-CN-N-TT,,3,,9.68,29.04,,,
+Item,,29110,,,,,,,,,,,,Filetti di Alici di Cetara Sott'olio | Nettuno - 200 gr - Formato 200 gr,A-DS-CN-N-FAO,,3,,7.64,22.919999999999998,,,
+Item,,29110,,,,,,,,,,,,Colatura di Alici di Cetara - Maturata 2 anni | Nettuno - 200 ml - Formato 200 ml,A-DS-CN-N-CA,,1,,22.87,22.87,,,
+Order,Consegnato,29109,Chiara Poelzer,Via Damiano Chiesa 4,Trento,TN,38122,IT,3663715159,24/02/2025,17/02/2025,chiara.poelzer@gmail.com,PayPal,,,TNT Italy,3,24.8,,,1,WS76911532,25/02/2025
+Item,,29109,,,,,,,,,,,,Ombretto Minerale in Polvere Libera - 45 colori | Neve Cosmetics - Occhi di Gatto - Colore Occhi di Gatto,C-O-NC-A1,,1,,6.3,6.3,,,
+Item,,29109,,,,,,,,,,,,Ombretto Minerale in Polvere Libera - 45 colori | Neve Cosmetics - Brooklyn - Colore Brooklyn,C-O-NC-A1,,1,,6.3,6.3,,,
+Item,,29109,,,,,,,,,,,,Ombretto Minerale in Polvere Libera - 45 colori | Neve Cosmetics - Fondente - Colore Fondente,C-O-NC-A1,,1,,6.3,6.3,,,
+Order,Consegnato,29108,Giovanni Civitella,Via Volontari della Libertà 29,Vittuone,MI,20009,IT,3926978274,17/02/2025,17/02/2025,c.gianni82@hotmail.it,PayPal,,,TNT Italy,3,60.65,,,1,WS76654219,19/02/2025
+Item,,29108,,,,,,,,,,,,Provola di Agerola Affumicata - Monti Lattari | Ruocco - 600 gr - Formato 600 gr,Provola - 600 gr,,2,,8.19,16.38,,,
+Item,,29108,,,,,,,,,,,,Fiordilatte di Agerola - Mozzarella campana dei Monti Lattari | Ruocco - 600 gr - Formato 600 gr,Fiordilatte - 600 gr,,2,,8.19,16.38,,,
+Order,Etichetta generata,(1) 29106,Maristella De Stasio,Wilhelm-Leuschner-Straße 25,Viernheim,HE,68519,DE,+491734045052,16/02/2025,16/02/2025,ferruccio.cassano@fastwebnet.it,Carta di credito o debito,,,FedEx v1,3,98.86,,,1,285483479588,
+Item,,(1) 29106,,,,,,,,,,,,Provola di Agerola Affumicata - Monti Lattari | Ruocco - 400 gr - Formato 400 gr,Provola - 400 gr,,3,,6.79,20.37,,,
+Item,,(1) 29106,,,,,,,,,,,,Burro fresco di Agerola - Per colazione | Ruocco - 250 gr - Formato 250 gr,Burro - 250 gr,,1,,,,,,
+Order,Etichetta generata,(2) 29106,Maristella De Stasio,Wilhelm-Leuschner-Straße 25,Viernheim,HE,68519,DE,+491734045052,16/02/2025,16/02/2025,ferruccio.cassano@fastwebnet.it,Carta di credito o debito,,,FedEx v1,1,8.99,,,1,285483478559,
+Item,,(2) 29106,,,,,,,,,,,,Filetti di Alici di Cetara Piccanti - Sott'olio e Peperoncino | Nettuno - 212 gr - Formato 212 gr,A-DS-CN-N-APO,,1,,8.99,8.99,,,
+Item,,29105,,,,,,,,,,,,Provola di Agerola Affumicata - Monti Lattari | Ruocco - 400 gr - Formato 400 gr,Provola - 400 gr,,3,,6.79,20.37,,,
+Order,Consegnato,(2) 29101,Maria Conversano,Via generale Passalacqua 5,Verona,VR,37137,IT,+393517814325,16/02/2025,16/02/2025,feliciaconversano@icloud.com,Carta di credito o debito,,,Poste Delivery Business,1,5.99,,,1,3UW0EX4000523,18/02/2025
+Item,,(2) 29101,,,,,,,,,,,,Mozzarella di bufala salernitana | Di Benedetto - 250 gr - Formato 250 gr,Mozzarella - 250 gr,,1,,5.99,5.99,,,
+Order,Consegnato,(1) 29101,Maria Conversano,Via generale Passalacqua 5,Verona,VR,37137,IT,+393517814325,16/02/2025,16/02/2025,feliciaconversano@icloud.com,Carta di credito o debito,,,TNT Italy,2,12.58,,,1,WS76581632,18/02/2025
+Item,,(1) 29101,,,,,,,,,,,,Provola di Agerola Affumicata - Monti Lattari | Ruocco - 600 gr - Formato 600 gr,Provola - 600 gr,,1,,9.69,9.69,,,
+Item,,(1) 29101,,,,,,,,,,,,Caciocavallo di Agerola affumicato & farcito | Ruocco - Prosciutto cotto - Farcitura Prosciutto cotto,Cacetto farcito - Prosciutto - 150 gr,,1,,2.89,2.89,,,
+Order,Consegnato,29104,Gilberto Gioachino Cammi,Via Ponte Seveso 19,Milano,MI,20125,IT,3356784515,16/02/2025,16/02/2025,gilbertopnltrainer@yahoo.it,Carta di credito o debito,,,TNT Italy,4,39.47,,,1,WS76581631,18/02/2025
+Item,,29104,,,,,,,,,,,,Provola di Agerola Affumicata - Monti Lattari | Ruocco - 600 gr - Formato 600 gr,Provola - 600 gr,,1,,9.69,9.69,,,
+Item,,29104,,,,,,,,,,,,Fiordilatte di Agerola - Mozzarella campana dei Monti Lattari | Ruocco - 600 gr - Formato 600 gr,Fiordilatte - 600 gr,,1,,9.69,9.69,,,
+Item,,29104,,,,,,,,,,,,Caciocavallo di Agerola affumicato & farcito | Ruocco - Olive - Farcitura Olive,Cacetto farcito - Olive - 150 gr,,1,,2.89,2.89,,,
+Order,Consegnato,29103,augusto paiella,Viale Beata Vergine del Carmelo 186,Roma,RM,00144,IT,335487361,16/02/2025,14/02/2025,augpai@libero.it,Carta di credito o debito,,,Poste Delivery Business,1,30.59,,,1,3UW0EX4000522,18/02/2025
+Order,Consegnato,29102,Alberto Briani,V. G. Verdi 5/a,Savignano Sul Rubicone,FC,47039,IT,3278447873,16/02/2025,14/02/2025,briani.alberto@gmail.com,Carta di credito o debito,,,TNT Italy,1,34.89,,,1,WS76579877,18/02/2025
+Order,Consegnato,29100,Alfonso Collura,Via Gian Filippo Ingrassia 31,Palermo,PA,90123,IT,3476792228,16/02/2025,12/02/2025,colluraalfonso@gmail.com,PayPal,,,Poste Delivery Business,1,30.59,,,1,3UW0EX4000521,19/02/2025
+Order,Consegnato,29099,Christiane Bellini,VIA POZZO DELL'AMORE 4N,AFFI,VR,37010,IT,3889997804,10/02/2025,10/02/2025,ritzgirl@hotmail.it,Carta di credito o debito,,,TNT Italy,1,24.39,,,1,WS76334803,13/02/2025
+Item,,29099,,,,,,,,,,,,Burro chiarificato della Valle d'Aosta - Beuro Colò - Ghee | Duclos - 1 Kg - Formato 1 Kg,Burro chiarificato - 1 Kg,,1,,16.49,16.49,,,
+Order,Consegnato,29098,Salvatore Scarcelli-Certosa Caffè,Via Mincio 14,San Donato Milanese,MI,20097,IT,3403502146,10/02/2025,10/02/2025,giovanna.laddaga@libero.it,PayPal,,,TNT Italy,1,53.69,,,1,WS76334852,12/02/2025
+Item,,29098,,,,,,,,,,,,Fiordilatte di Agerola - Mozzarella campana dei Monti Lattari | Ruocco - 3 Kg - Formato 3 Kg,Fiordilatte - 3 Kg,,1,,45.79,45.79,,,
+Order,Consegnato,29097,Fabio Bandini,Via Coriano 58,Rimini,RN,47924,IT,3200385619,10/02/2025,10/02/2025,fbandini01@gmail.com,PayPal,,,TNT Italy,1,52.89,,,1,WS76334838,13/02/2025
+Item,,29096,,,,,,,,,,,,Ricotta di fuscella artigianale fresca di Agerola | Ruocco - 350 gr - Formato 350 gr,Ricotta - 350 gr,,1,,3.59,3.59,,,
+Item,,29096,,,,,,,,,,,,Provola di Agerola Affumicata - Monti Lattari | Ruocco - 400 gr - Formato 400 gr,Provola - 400 gr,,2,,6.79,13.58,,,
+Order,Consegnato,29095,Alfonso Migliucci,Via Francesco Pasanisi 2,Assisi,PG,06081,IT,3683626574,09/02/2025,09/02/2025,alfinter3@libero.it,In contanti alla consegna,,,TNT Italy,2,42.95,,,1,WS76255412,11/02/2025
+Item,,29095,,,,,,,,,,,,Caciocavallo di Agerola affumicato & farcito | Ruocco - Prosciutto cotto - Farcitura Prosciutto cotto,Cacetto farcito - Prosciutto - 150 gr,,4,,2.89,11.56,,,
+Item,,29094,,,,,,,,,,,,Provola di Agerola Affumicata - Monti Lattari | Ruocco - 400 gr - Formato 400 gr,Provola - 400 gr,,3,,6.79,20.37,,,
+Order,Consegnato,(4) 29088,Domenico Pompedio,Brahmsweg 1,Rosenfeld,BW,72348,DE,+4974283533,08/02/2025,08/02/2025,domenico.pompedio@t-online.de,Bonifico Bancario (Facile e sicuro),,,FedEx v1,4,141.45000000000002,,,1,285233262760,18/02/2025
+Item,,(4) 29088,,,,,,,,,,,,Burro fresco di Agerola - Per colazione | Ruocco - 250 gr - Formato 250 gr,Burro - 250 gr,,10,,3.96,39.6,,,
+Item,,(4) 29088,,,,,,,,,,,,Fiordilatte di Agerola - Mozzarella campana dei Monti Lattari | Ruocco - 600 gr - Formato 600 gr,Fiordilatte - 600 gr,,6,,9.66,57.96,,,
+Item,,(4) 29088,,,,,,,,,,,,Burro fresco di Agerola - Per colazione | Ruocco - 250 gr - Formato 250 gr,Burro - 250 gr,,1,,,,,,
+Order,Consegnato,(1) 29088,Domenico Pompedio,Brahmsweg 1,Rosenfeld,BW,72348,DE,+4974283533,08/02/2025,08/02/2025,domenico.pompedio@t-online.de,Bonifico Bancario (Facile e sicuro),,,FedEx v1,1,71.68,,,1,285233265380,21/02/2025
+Order,Consegnato,(3) 29088,Domenico Pompedio,Brahmsweg1,Rosenfeld,BW,72348,DE,+4974283533,08/02/2025,08/02/2025,domenico.pompedio@t-online.de,Bonifico Bancario (Facile e sicuro),,,FedEx v1,1,54.17,,,1,285229949005,19/02/2025
+Order,Consegnato,(2) 29088,Domenico Pompedio,Brahmsweg1,Rosenfeld,BW,72348,DE,+4974283533,08/02/2025,08/02/2025,domenico.pompedio@t-online.de,Bonifico Bancario (Facile e sicuro),,,FedEx v1,3,99.21,,,1,285229974668,13/02/2025
+Item,,(2) 29088,,,,,,,,,,,,Bleu d'Aoste - Formaggio erborinato di vacca valdostana | Duclos - ~1 kg - Formato ~1 kg,Bleu d'Aoste - 1 Kg,,1,,22.47,22.47,,,
+Item,,(2) 29088,,,,,,,,,,,,Le Petit Fromage - Caciotta stagionata - Valle d'Asota | Duclos - Intera (~750 gr) - Formato Intera (~750 gr),Le Petit Fromage - Forma Intera (750 gr),,1,,12.77,12.77,,,
+Item,,(2) 29088,,,,,,,,,,,,Toma di Gressoney - Formaggio semigrasso stagionato | Duclos - Forma intera ~3 Kg - Formato Forma intera ~3 Kg,Toma Gressoney - Forma Intera (3 Kg),,1,,63.97,63.97,,,
+Order,Consegnato,(2) 29085,Santo Fico,Viale A.de Gasperi 33A,SAN FELICE CIRCEO,LT,04017,IT,+393347541662,08/02/2025,08/02/2025,morituro1@gmail.com,PayPal,,,Poste Delivery Business,1,12.69,,,1,3UW0EX4000519,11/02/2025
+Order,Consegnato,(1) 29085,Santo Fico,Viale Alcide De Gasperi 33A,San Felice Circeo,LT,04017,IT,+393347541662,08/02/2025,08/02/2025,morituro1@gmail.com,PayPal,,,TNT Italy,3,37.07,,,1,WS76246843,11/02/2025
+Item,,(1) 29085,,,,,,,,,,,,Fiordilatte di Agerola - Mozzarella campana dei Monti Lattari | Ruocco - 400 gr - Formato 400 gr,Fiordilatte - 400 gr,,1,,5.78,5.78,,,
+Item,,(1) 29085,,,,,,,,,,,,Ricotta di fuscella artigianale fresca di Agerola | Ruocco - 350 gr - Formato 350 gr,Ricotta - 350 gr,,1,,3.06,3.06,,,
+Item,,(1) 29085,,,,,,,,,,,,Provola di Agerola Affumicata - Monti Lattari | Ruocco - 600 gr - Formato 600 gr,Provola - 600 gr,,2,,8.23,16.46,,,
+Order,Consegnato,(2) 29087,Simone Taliani,Viale giuseppe vespa 264,Piancastagnaio,SI,53025,IT,+393348779335,08/02/2025,08/02/2025,talozzi18@libero.it,PayPal,,,Poste Delivery Business,1,13.48,,,1,3UW0EX4000518,11/02/2025
+Order,Consegnato,(1) 29087,Simone Taliani,Viale giuseppe vespa 264,Piancastagnaio,SI,53025,IT,+393348779335,08/02/2025,08/02/2025,talozzi18@libero.it,PayPal,,,TNT Italy,2,51.27,,,1,WS76246837,11/02/2025
+Item,,(1) 29087,,,,,,,,,,,,Fiordilatte di Agerola - Mozzarella campana dei Monti Lattari | Ruocco - 600 gr - Formato 600 gr,Fiordilatte - 600 gr,,2,,9.69,19.38,,,
+Item,,(1) 29087,,,,,,,,,,,,Provola di Agerola Affumicata - Monti Lattari | Ruocco - 600 gr - Formato 600 gr,Provola - 600 gr,,2,,9.69,19.38,,,
+Order,Consegnato,29093,ivan zanutto,Via Po 79,Cormano,MI,20032,IT,+393484163098,08/02/2025,08/02/2025,zanuttoivan@gmail.com,Carta di credito o debito,,,TNT Italy,2,57.99,,,1,WS76246711,11/02/2025
+Item,,29093,,,,,,,,,,,,Fiordilatte di Agerola - Mozzarella campana dei Monti Lattari | Ruocco - 3 Kg - Formato 3 Kg,Fiordilatte - 3 Kg,,1,,45.79,45.79,,,
+Order,Consegnato,29092,Marco Vecchi,Via Corriera 27,Concordia sulla Secchia,MO,41033,IT,+393496917296,08/02/2025,08/02/2025,vemark78@icloud.com,PayPal,,,TNT Italy,3,33.27,,,1,WS76246729,11/02/2025
+Item,,29092,,,,,,,,,,,,Burro chiarificato della Valle d'Aosta - Beuro Colò - Ghee | Duclos - 1 Kg - Formato 1 Kg,Burro chiarificato - 1 Kg,,1,,16.49,16.49,,,
+Item,,29092,,,,,,,,,,,,Toma di Gressoney - Formaggio semigrasso stagionato | Duclos - ~200 gr - Formato ~200 gr,Toma di Gressoney - 200 gr,,1,,4.3,4.3,,,
+Order,Consegnato,29090,Teodoro Bazzini,Via Giosuè Borsi 93 bis A,Torino,TO,10149,IT,+393894769596,08/02/2025,07/02/2025,teodorobazzini@gmail.com,Carta di credito o debito,,,TNT Italy,1,71.86,,,1,WS76246733,11/02/2025
+Item,,29090,,,,,,,,,,,,Burro chiarificato della Valle d'Aosta - Beuro Colò - Ghee | Duclos - 1 Kg - Formato 1 Kg,Burro chiarificato - 1 Kg,,4,,16.49,65.96,,,
+Order,Consegnato,29089,Emanuele Giordani,Via Giacomo Puccini 24,Budrio,BO,40054,IT,+393475413581,08/02/2025,06/02/2025,greenland1977@hotmail.com,PayPal,,,TNT Italy,1,50.92,,,1,WS76246833,11/02/2025
+Item,,29089,,,,,,,,,,,,Box degustazione formaggi campani di Agerola | Caseificio Ruocco,Box - Burro 250g + Cacio Aff. 250g + Cacio Bian. 250g + Fiordilatte 600g + Provola 600g + Provolone 6 Mesi 600g + 2xCacetti Olive + 2xCacetti Prosciutto,,1,,50.92,50.92,,,
+Order,Consegnato,29086,Luciano Pimpini,Via Positano 26,Numana,AN,60026,IT,+393357049047,08/02/2025,05/02/2025,lucianodifalco@gmail.com,PayPal,,,TNT Italy,2,77.33,,,1,WS76246751,11/02/2025
+Item,,29086,,,,,,,,,,,,Burro chiarificato della Valle d'Aosta - Beuro Colò - Ghee | Duclos - 1 Kg - Formato 1 Kg,Burro chiarificato - 1 Kg,,3,,16.49,49.47,,,
+Item,,29086,,,,,,,,,,,,Burro chiarificato della Valle d'Aosta - Beuro Colò - Ghee | Duclos - 250 gr - Formato 250 gr,Burro chiarificato - 250 gr,,4,,5.49,21.96,,,
+Order,Consegnato,29084,Marzia Comincini,Via Averardo Buschi 10,Milano,MI,20133,IT,+393481405716,08/02/2025,05/02/2025,mariacomincini@gmail.com,Carta di credito o debito,,,TNT Italy,2,83.87,,,1,WS76246816,12/02/2025
+Item,,29084,,,,,,,,,,,,Tonno di Tonnara sott'olio di oliva | Nettuno - 300 gr - Formato 300 gr,A-DS-CN-N-TT,,5,,9.68,48.4,,,
+Item,,29084,,,,,,,,,,,,Filetti di Alici di Cetara Sott'olio | Nettuno - 200 gr - Formato 200 gr,A-DS-CN-N-FAO,,4,,7.64,30.56,,,
+Order,Consegnato,29083,Marzia Comincini,Via Averardo Buschi 10,Milano,MI,20133,IT,+393481405716,08/02/2025,05/02/2025,mariacomincini@gmail.com,Carta di credito o debito,,,TNT Italy,1,34.39,,,1,WS76246819,11/02/2025
+Order,Consegnato,29082,Elvis Rubega,Via Mure 32,Arzignano,VI,36071,IT,+393357636185,08/02/2025,05/02/2025,elvis.rubega@gmail.com,PayPal,,,TNT Italy,1,21.92,,,1,WS76248517,11/02/2025
+Item,,29082,,,,,,,,,,,,Burro chiarificato della Valle d'Aosta - Beuro Colò - Ghee | Duclos - 1 Kg - Formato 1 Kg,Burro chiarificato - 1 Kg,,2,,14.02,28.04,,,
+Order,Consegnato,(2) 29079,Vittorio Campanino,Via Paludetti 29,Treviso,TV,31100,IT,+393287235729,04/02/2025,04/02/2025,campanino3@gmail.com,Carta di credito o debito,,,TNT Italy,6,64.34,,,1,WS76062587,06/02/2025
+Item,,(2) 29079,,,,,,,,,,,,Toma di Gressoney - Formaggio semigrasso stagionato | Duclos - ~500 gr - Formato ~500 gr,Toma di Gressoney - 500 gr,,1,,10.8,10.8,,,
+Item,,(2) 29079,,,,,,,,,,,,Fonduta Valdostana già pronta in barattolo - Tradizionale di Fontina | Duclos,Fonduta in barattolo - 270 gr,,2,,7.99,15.98,,,
+Item,,(2) 29079,,,,,,,,,,,,Burro chiarificato della Valle d'Aosta - Beuro Colò - Ghee | Duclos - 250 gr - Formato 250 gr,Burro chiarificato - 250 gr,,1,,5.49,5.49,,,
+Item,,(2) 29079,,,,,,,,,,,,Bleu d'Aoste - Formaggio erborinato di vacca valdostana | Duclos - ~500 gr - Formato ~500 gr,Bleu d'Aoste - 500 gr,,1,,11.29,11.29,,,
+Order,Consegnato,(1) 29079,Vittorio Campanino,Via Paludetti 29,Treviso,TV,31100,IT,+393287235729,04/02/2025,04/02/2025,campanino3@gmail.com,Carta di credito o debito,,,TNT Italy,4,45.25,,,1,WS76062341,06/02/2025
+Item,,(1) 29079,,,,,,,,,,,,Fiordilatte di Agerola - Mozzarella campana dei Monti Lattari | Ruocco - 400 gr - Formato 400 gr,Fiordilatte - 400 gr,,1,,6.79,6.79,,,
+Item,,(1) 29079,,,,,,,,,,,,Provola di Agerola Affumicata - Monti Lattari | Ruocco - 600 gr - Formato 600 gr,Provola - 600 gr,,1,,9.69,9.69,,,
+Item,,(1) 29079,,,,,,,,,,,,Burro fresco di Agerola - Per colazione | Ruocco - 250 gr - Formato 250 gr,Burro - 250 gr,,1,,,,,,
+Order,Consegnato,(2) 29078,Francesca Esposito,Via Della liberazione 47/1,Budrio,BO,40054,IT,+393387621821,08/02/2025,04/02/2025,espositofrancesca1973@gmail.com,PayPal,,,Poste Delivery Business,1,18.95,,,1,3UW0EX4000520,11/02/2025
+Order,Consegnato,(1) 29078,Francesca Esposito,Via Della liberazione 47/1,Budrio,BO,40054,IT,+393387621821,04/02/2025,04/02/2025,espositofrancesca1973@gmail.com,PayPal,,,TNT Italy,2,51.48,,,1,WS76062325,06/02/2025
+Order,Consegnato,29080,ANTONIO CIRIELLO,VIA TRIESTE 90A,RAVENNA,RA,48122,IT,+393487804416,05/02/2025,04/02/2025,antonio@fastconsulting.it,Carta di credito o debito,,,TNT Italy,4,122.83,,,1,WS76074657,06/02/2025
+Item,,29080,,,,,,,,,,,,Fiordilatte di Agerola - Mozzarella campana dei Monti Lattari | Ruocco - 400 gr - Formato 400 gr,Fiordilatte - 400 gr,,10,,5.77,57.699999999999996,,,
+Item,,29080,,,,,,,,,,,,Burro fresco di Agerola - Per colazione | Ruocco - 250 gr - Formato 250 gr,Burro - 250 gr,,1,,,,,,
+Item,,29080,,,,,,,,,,,,Provola di Agerola Affumicata - Monti Lattari | Ruocco - 400 gr - Formato 400 gr,Provola - 400 gr,,7,,5.77,40.39,,,
+Item,,29080,,,,,,,,,,,,Fiordilatte di Agerola - Mozzarella campana dei Monti Lattari | Ruocco - 600 gr - Formato 600 gr,Fiordilatte - 600 gr,,3,,8.24,24.72,,,
+Order,Consegnato,29076,Letizia Biondi,Gilberto Romagnoli 25,Cesena,FC,47522,IT,+393338616838,02/02/2025,02/02/2025,letizia.biondi@gmail.com,PayPal,,,TNT Italy,1,57.37,,,1,WS75916138,05/02/2025
+Item,,29076,,,,,,,,,,,,Burro chiarificato della Valle d'Aosta - Beuro Colò - Ghee | Duclos - 1 Kg - Formato 1 Kg,Burro chiarificato - 1 Kg,,3,,16.49,49.47,,,
+Order,Consegnato,29075,Sergio Scagnelli,Via Camillo Piatti 35,Podenzano,PC,29027,IT,+393403167524,02/02/2025,02/02/2025,sergiscan@gmail.com,PayPal,,,Poste Delivery Business,1,31.8,,,1,3UW0EX4000516,04/02/2025
+Item,,29075,,,,,,,,,,,,Alici sotto sale di Cetara | Nettuno - 1 Kg - Formato 1 Kg,Alici Sotto Sale - 1 Kg,,1,,24.9,24.9,,,
+Item,,29074,,,,,,,,,,,,Provola di Agerola Affumicata - Monti Lattari | Ruocco - 400 gr - Formato 400 gr,Provola - 400 gr,,3,,6.79,20.37,,,
+Order,Consegnato,29071,Simone Camarotto,Via Don Paolo Meneghello 8/1,San Fior,TV,31020,IT,+393887522023,31/01/2025,31/01/2025,camarotto.simone@gmail.com,PayPal,,,TNT Italy,1,71.86,,,1,WS75899531,05/02/2025
+Item,,29071,,,,,,,,,,,,Burro chiarificato della Valle d'Aosta - Beuro Colò - Ghee | Duclos - 1 Kg - Formato 1 Kg,Burro chiarificato - 1 Kg,,4,,16.49,65.96,,,
+Order,Consegnato,29070,Andrea Castellani,Via Premuda 6,Roma,RM,00195,IT,+393358424377,03/02/2025,31/01/2025,andrea.castellani13@gmail.com,In contanti alla consegna,,,TNT Italy,1,32.9,,,1,WS75929087,04/02/2025
+Item,,29070,,,,,,,,,,,,Mentifricio - Dentifricio naturale Passion Fruit & Menta | Radici Toscane,C-MPM-RT-A2,,5,,5.4,27,,,
+Order,Consegnato,29069,franco sartori,Via Santa Caterina 54/E,Arco,TN,38062,IT,+390464540044,31/01/2025,31/01/2025,FRANCO.SARTORI@CEDARCO.IT,PayPal,,,Poste Delivery Business,1,16.8,,,1,3UW0EX4000514,04/02/2025
+Item,,29069,,,,,,,,,,,,Alici sotto sale di Cetara | Nettuno - 420 gr - Formato 420 gr,Alici Sotto Sale - 420 g,,1,,9.9,9.9,,,
+Order,Consegnato,29068,Cristiano Di pasquale,Via dell'annunziata 7/2,Finale Ligure,SV,17024,IT,+393333968979,02/02/2025,31/01/2025,camillobassetthound@gmail.com,PayPal,,,TNT Italy,3,76.88,,,1,WS75916117,05/02/2025
+Item,,29068,,,,,,,,,,,,Provola di Agerola Affumicata - Monti Lattari | Ruocco - 600 gr - Formato 600 gr,Provola - 600 gr,,1,,9.69,9.69,,,
+Order,Consegnato,29067,Alberto Barbarini,Via Aldo Moro 50,FONTANELLATO,PR,43012,IT,+39335482460,31/01/2025,29/01/2025,barbarinialberto@libero.it,Carta di credito o debito,,,TNT Italy,1,52.89,,,1,WS75880118,05/02/2025
+Order,Consegnato,29066,José Vicente Martínez Rivera,La Rambla 13 4º 2ª,Barcelona,B,08002,ES,+34666727204,31/01/2025,29/01/2025,jovimar54@hotmail.com,PayPal,,,FedEx v1,1,96.98,,,1,284946534073,18/02/2025
+Order,Consegnato,,"""Acquaefarina Trento """,Via Torre d'Augusto 25,Trento,TN,38122,IT,+393920235422,29/01/2025,29/01/2025,acquaefarinatn@gmail.com,,,,TNT Italy,1,200,,,2,WS75739263,30/01/2025
+Item,,,,,,,,,,,,,,ruocco,,,2,,100,200,,,
+Order,Consegnato,,Acquaefarina Trento,Via Torre d'Augusto 25,Trento,TN,38122,IT,+393920235422,29/01/2025,28/01/2025,acquaefarinatn@gmail.com,,,,TNT Italy,1,100,,,2,WS75739264,30/01/2025
+Item,,,,,,,,,,,,,,ruocco,,,1,,100,100,,,
+Order,Consegnato,29065,Davide Lunardi,Via marzabotto 9,Paderno dugnano,MI,20037,IT,+393922497506,28/01/2025,28/01/2025,davidelunardi81@gmail.com,PayPal,,,TNT Italy,1,30.39,,,1,WS75731012,30/01/2025
+Order,Consegnato,29064,SANTO BALASCIA,Via Pirilla 14,Petralia Sottana,PA,90027,IT,+393281329778,28/01/2025,27/01/2025,santo.balascia@gmail.com,PayPal,,,TNT Italy,1,21.35,,,1,WS75730180,04/02/2025
+Item,,29064,,,,,,,,,,,,Colatura di Alici di Cetara - Maturata 2 anni | Nettuno - 100 ml [Contagocce] - Formato 100 ml [Contagocce],A-DS-CN-N-CA,,1,,14.45,14.45,,,
+Order,Consegnato,,Acquaefarina Trento,Via Torre d'Augusto 25,Trento,TN,38122,IT,+393920235422,27/01/2025,27/01/2025,giacomomg88@gmail.com,,,,TNT Italy,1,100,,,1,WS75649050,29/01/2025
+Item,,,,,,,,,,,,,,ruocco,,,1,,100,100,,,
+Item,,29063,,,,,,,,,,,,Furmàcc del Féen - Formaggio Stagionato da Latte Fieno Valtellinese | Valli del Bitto - Versione Magro - Stagionatura Vecchio (5/12 mesi) - Formato 750 gr,A-FDF-VBSR-DP,,1,,24.99,24.99,,,
+Item,,29063,,,,,,,,,,,,Furmàcc del Féen - Formaggio Stagionato da Latte Fieno Valtellinese | Valli del Bitto - Versione Magro - Stagionatura Vecchio (5/12 mesi) - Formato 500 gr,A-FDF-VBSR-DP,,1,,16.99,16.99,,,
+Item,,29063,,,,,,,,,,,,Furmàcc del Féen - Formaggio Stagionato da Latte Fieno Valtellinese | Valli del Bitto - Versione Semigrasso - Stagionatura Giovane (4/5 mesi) - Formato 500 gr,A-FDF-VBSR-DP,,1,,12.99,12.99,,,
+Item,,29062,,,,,,,,,,,,Provola di Agerola Affumicata - Monti Lattari | Ruocco - 400 gr - Formato 400 gr,Provola - 400 gr,,3,,6.79,20.37,,,
+Order,Consegnato,29061,morris matteini,Piazza Ceppo 10,Caravaggio,BG,24043,IT,+393492536552,27/01/2025,26/01/2025,matteinimorris05@gmail.com,In contanti alla consegna,,,TNT Italy,1,50.39,,,1,WS75666247,31/01/2025
+Item,,29061,,,,,,,,,,,,Burro chiarificato della Valle d'Aosta - Beuro Colò - Ghee | Duclos - 250 gr - Formato 250 gr,Burro chiarificato - 250 gr,,8,,5.31,42.48,,,
+Order,Consegnato,(3) 29057,Leonardo Felici,Via Amato Tiraboschi n.70,Ancona,AN,60131,IT,+393791147065,25/01/2025,25/01/2025,leonardo90music@gmail.com,PayPal,,,TNT Italy,2,52.32,,,1,WS75582366,28/01/2025
+Item,,(3) 29057,,,,,,,,,,,,Burro fresco di Agerola - Per colazione | Ruocco - 250 gr - Formato 250 gr,Burro - 250 gr,,1,,,,,,
+Item,,(3) 29057,,,,,,,,,,,,Fiordilatte di Agerola - Mozzarella campana dei Monti Lattari | Ruocco - 3 Kg - Formato 3 Kg,Fiordilatte - 3 Kg,,1,,40.96,40.96,,,
+Order,Consegnato,(1) 29057,Leonardo Felici,Via Amato Tiraboschi n.70,Ancona,AN,60131,IT,+393791147065,25/01/2025,25/01/2025,leonardo90music@gmail.com,PayPal,,,Poste Delivery Business,2,30.72,,,1,3UW0EX4000513,28/01/2025
+Order,Consegnato,(2) 29057,Leonardo Felici,Via Amato Tiraboschi n.70,Ancona,AN,60131,IT,+393791147065,25/01/2025,25/01/2025,leonardo90music@gmail.com,PayPal,,,TNT Italy,1,21.51,,,1,WS75582280,28/01/2025
+Item,,(2) 29057,,,,,,,,,,,,Tonno di Tonnara sott'olio di oliva | Nettuno - 540 gr - Formato 540 gr,A-DS-CN-N-TT,,1,,16.84,16.84,,,
+Order,Consegnato,29060,Giamapolo Cortinovis,Via duno18,Almenno San Salvatore,BG,24031,IT,+393886504051,25/01/2025,24/01/2025,pacemente58@gmail.com,PayPal,,,TNT Italy,1,27.66,,,1,WS75582122,30/01/2025
+Item,,29060,,,,,,,,,,,,Burro chiarificato della Valle d'Aosta - Beuro Colò - Ghee | Duclos - 250 gr - Formato 250 gr,Burro chiarificato - 250 gr,,4,,4.94,19.76,,,
+Order,Consegnato,29059,Monica Maggioni,Viale Corsica 99,Milano,MI,20133,IT,+393384065561,27/01/2025,24/01/2025,alimoma@yahoo.it,PayPal,,,TNT Italy,1,21.89,,,1,WS75649295,30/01/2025
+Item,,29059,,,,,,,,,,,,Peeling Attivo in polvere - Tarake  | Latte & Luna,C-PA-LL-B2,,1,,15.99,15.99,,,
+Order,Consegnato,29058,Carmine Magnotta,Via Gallareto 16,Montegrosso d’Asti,AT,14048,IT,+393341397691,25/01/2025,22/01/2025,magnottac@alice.it,Carta di credito o debito,,,TNT Italy,1,27.01,,,1,WS75582372,28/01/2025
+Item,,29058,,,,,,,,,,,,Provola di Agerola Affumicata - Monti Lattari | Ruocco - 400 gr - Formato 400 gr,Provola - 400 gr,,3,,6.37,19.11,,,
+Order,Consegnato,29056,Simone Taliani,Viale giuseppe vespa 264,Piancastagnaio,SI,53025,IT,+393348779335,21/01/2025,21/01/2025,talozzi18@libero.it,PayPal,,,TNT Italy,4,40.86,,,1,WS75395141,23/01/2025
+Item,,29056,,,,,,,,,,,,Fiordilatte di Agerola - Mozzarella campana dei Monti Lattari | Ruocco - 400 gr - Formato 400 gr,Fiordilatte - 400 gr,,1,,6.79,6.79,,,
+Item,,29056,,,,,,,,,,,,Fiordilatte di Agerola - Mozzarella campana dei Monti Lattari | Ruocco - 600 gr - Formato 600 gr,Fiordilatte - 600 gr,,1,,9.69,9.69,,,
+Item,,29056,,,,,,,,,,,,Provola di Agerola Affumicata - Monti Lattari | Ruocco - 400 gr - Formato 400 gr,Provola - 400 gr,,1,,6.79,6.79,,,
+Item,,29056,,,,,,,,,,,,Provola di Agerola Affumicata - Monti Lattari | Ruocco - 600 gr - Formato 600 gr,Provola - 600 gr,,1,,9.69,9.69,,,
+Order,Consegnato,29055,Lucia Tabacco,Via dei Pioppi 6,Cremona,CR,26100,IT,+393450161019,21/01/2025,21/01/2025,lucia.tabacco@gmail.com,PayPal,,,TNT Italy,4,32.74,,,1,WS75395148,23/01/2025
+Item,,29055,,,,,,,,,,,,Ricotta di fuscella artigianale fresca di Agerola | Ruocco - 350 gr - Formato 350 gr,Ricotta - 350 gr,,1,,3.59,3.59,,,
+Item,,29055,,,,,,,,,,,,Caciocavallo di Agerola affumicato & farcito | Ruocco - Prosciutto cotto - Farcitura Prosciutto cotto,Cacetto farcito - Prosciutto - 150 gr,,2,,2.89,5.78,,,
+Item,,29055,,,,,,,,,,,,Caciocavallo di Agerola affumicato & farcito | Ruocco - Olive - Farcitura Olive,Cacetto farcito - Olive - 150 gr,,2,,2.89,5.78,,,
+Item,,29055,,,,,,,,,,,,Provola di Agerola Affumicata - Monti Lattari | Ruocco - 600 gr - Formato 600 gr,Provola - 600 gr,,1,,9.69,9.69,,,
+Order,Consegnato,29054,Matteo Lusvarghi,strada Sant'anna 612/b,Modena,MO,41122,IT,3393666487,20/01/2025,20/01/2025,acquisti@idrobios.com,In contanti alla consegna,,,Poste Delivery Business,2,26.88,,,1,4UW0EX4000251,22/01/2025
+Order,Consegnato,29053,Matteo Lusvarghi,strada Sant'anna 612/b,Modena,MO,41122,IT,3393666487,20/01/2025,20/01/2025,acquisti@idrobios.com,In contanti alla consegna,,,TNT Italy,1,28.27,,,1,WS75325946,22/01/2025
+Item,,29053,,,,,,,,,,,,Fiordilatte di Agerola - Mozzarella campana dei Monti Lattari | Ruocco - 400 gr - Formato 400 gr,Fiordilatte - 400 gr,,3,,6.79,20.37,,,
+Order,Consegnato,(2) 29051,Roberto Puggioni,VIA PARIGI 10,SASSARI,SS,07100,IT,+393476049719,19/01/2025,19/01/2025,roberto.puggioni@inwind.it,PayPal,,,TNT Italy,1,6.79,,,1,WS75246207,22/01/2025
+Item,,(2) 29051,,,,,,,,,,,,Provola di Agerola Affumicata - Monti Lattari | Ruocco - 400 gr - Formato 400 gr,Provola - 400 gr,,1,,6.79,6.79,,,
+Order,Consegnato,(1) 29051,Roberto Puggioni,VIA PARIGI 10,SASSARI,SS,07100,IT,+393476049719,19/01/2025,19/01/2025,roberto.puggioni@inwind.it,PayPal,,,Poste Delivery Business,2,32,,,1,3UW0EX4000511,22/01/2025
+Item,,29052,,,,,,,,,,,,Burro chiarificato della Valle d'Aosta - Beuro Colò - Ghee | Duclos - 250 gr - Formato 250 gr,Burro chiarificato - 250 gr,,4,,5.49,21.96,,,
+Item,,29050,,,,,,,,,,,,Fonduta Valdostana già pronta in barattolo - Tradizionale di Fontina | Duclos,Fonduta in barattolo - 270 gr,,1,,7.99,7.99,,,
+Item,,29050,,,,,,,,,,,,Bleu d'Aoste - Formaggio erborinato di vacca valdostana | Duclos - ~200 gr - Formato ~200 gr,Bleu d'Aoste - 200 gr,,1,,4.49,4.49,,,
+Order,Consegnato,29049,Federico Busu,Via Perugia 3,Olbia,SS,07026,IT,+393489373427,20/01/2025,16/01/2025,busufederk97@gmail.com,Carta di credito o debito,,,TNT Italy,1,30.59,,,1,WS75325057,27/01/2025
+Order,Consegnato,29048,Libera Voto,Pietro Nenni 13,Rodi Garganico,FG,71012,IT,+393392424159,19/01/2025,16/01/2025,liberavoto8@gmail.com,In contanti alla consegna,,,Poste Delivery Business,5,50.96,,,1,4UW0EX4000250,21/01/2025
+Item,,29048,,,,,,,,,,,,Stracciatella di Bufala con panna fresca campana | Di Benedetto - 250 gr - Formato 250 gr,Stracciata di bufala - 250 gr,,1,,6.2,6.2,,,
+Item,,29048,,,,,,,,,,,,Sfoglia di Mozzarella di Bufala - già pronta da farcire & arrotolare | Di Benedetto - ∼500 gr (35x20 cm) - Formato ∼500 gr (35x20 cm),Sfoglia - 500 gr (35x20 cm),,1,,9.5,9.5,,,
+Item,,29048,,,,,,,,,,,,Ciliegine di Mozzarella di Bufala | Di Benedetto - 500 gr (20 pz) - Formato 500 gr (20 pz),Ciliegine - 500 gr (25g x 20 pz),,1,,8.99,8.99,,,
+Item,,29048,,,,,,,,,,,,Ricotta di bufala fresca in salvietta | Di Benedetto - 250 gr - Formato 250 gr,Ricotta di bufala - 250 gr,,1,,4.49,4.49,,,
+Order,Consegnato,29047,Oriana Roncarolo,Via della Masera 8,Comano Terme,TN,38077,IT,+393687887158,20/01/2025,15/01/2025,oriana.roncarolo@yahoo.it,PayPal,,,TNT Italy,1,71.84,,,1,WS75325625,24/01/2025
+Item,,29045,,,,,,,,,,,,Fiordilatte di Agerola - Mozzarella campana dei Monti Lattari | Ruocco - 600 gr - Formato 600 gr,Fiordilatte - 600 gr,,4,,8.72,34.88,,,
+Order,Consegnato,29043,elia poletti,via santa trinità 26,TRENTO,TN,38121,IT,+393883995599,13/01/2025,13/01/2025,polettieliapoletti@gmail.com,Carta di credito o debito,,,TNT Italy,1,71.78,,,1,WS74974305,15/01/2025
+Item,,29043,,,,,,,,,,,,Burro chiarificato della Valle d'Aosta - Beuro Colò - Ghee | Duclos - 250 gr - Formato 250 gr,Burro chiarificato - 250 gr,,12,,5.49,65.88,,,
+Order,Consegnato,29042,Sabrina Giselle Melli,VIALE GUIDO BACCELLI 6,civitavecchia,RM,00053,IT,+393474427853,14/01/2025,13/01/2025,gisellemelli@gmail.com,PayPal,,,TNT Italy,1,27.66,,,1,WS75041560,16/01/2025
+Item,,29042,,,,,,,,,,,,Burro chiarificato della Valle d'Aosta - Beuro Colò - Ghee | Duclos - 250 gr - Formato 250 gr,Burro chiarificato - 250 gr,,4,,4.94,19.76,,,
+Order,Consegnato,(2) 29035,ivan zanutto,Via Po 79,Cormano,MI,20032,IT,+393484163098,12/01/2025,12/01/2025,zanuttoivan@gmail.com,Carta di credito o debito,,,Poste Delivery Business,1,8.54,,,1,3UW0EX4000510,15/01/2025
+Item,,(2) 29035,,,,,,,,,,,,Mozzarella di bufala salernitana | Di Benedetto - 250 gr - Formato 250 gr,Mozzarella - 250 gr,,1,,5.49,5.49,,,
+Order,Consegnato,(1) 29035,ivan zanutto,Via Po 79,Cormano,MI,20032,IT,+393484163098,12/01/2025,12/01/2025,zanuttoivan@gmail.com,Carta di credito o debito,,,TNT Italy,1,35.74,,,1,WS74897407,14/01/2025
+Order,Consegnato,29041,LEONARDO CUBEDDU,Via Settimo 2,Chivasso,TO,10034,IT,+393338432329,12/01/2025,12/01/2025,info.alcserramenti@gmail.com,Carta di credito o debito,,,TNT Italy,1,28.89,,,1,WS74897453,14/01/2025
+Item,,29039,,,,,,,,,,,,Fiordilatte di Agerola - Mozzarella campana dei Monti Lattari | Ruocco - 600 gr - Formato 600 gr,Fiordilatte - 600 gr,,2,,9.69,19.38,,,
+Item,,29039,,,,,,,,,,,,Provola di Agerola Affumicata - Monti Lattari | Ruocco - 600 gr - Formato 600 gr,Provola - 600 gr,,2,,9.69,19.38,,,
+Order,Consegnato,29038,Carmine Magnotta,Via Gallareto 16,Montegrosso d’Asti,AT,14048,IT,+393341397691,12/01/2025,11/01/2025,magnottac@alice.it,Carta di credito o debito,,,TNT Italy,3,34.57,,,1,WS74897368,14/01/2025
+Item,,29038,,,,,,,,,,,,Provola di Agerola Affumicata - Monti Lattari | Ruocco - 400 gr - Formato 400 gr,Provola - 400 gr,,2,,6.79,13.58,,,
+Item,,29038,,,,,,,,,,,,Fiordilatte di Agerola - Mozzarella campana dei Monti Lattari | Ruocco - 400 gr - Formato 400 gr,Fiordilatte - 400 gr,,1,,6.79,6.79,,,
+Order,Consegnato,29037,Franco Di Vito,P. Pasquale Pelagalli 11,Aquino,FR,03031,IT,+393314381853,12/01/2025,11/01/2025,franco.divito.fdv@gmai.com,Carta di credito o debito,,,TNT Italy,2,20.99,,,1,WS74897370,14/01/2025
+Item,,29037,,,,,,,,,,,,Fiordilatte di Agerola - Mozzarella campana dei Monti Lattari | Ruocco - 400 gr - Formato 400 gr,Fiordilatte - 400 gr,,1,,6.79,6.79,,,
+Item,,29036,,,,,,,,,,,,Toma di Gressoney - Formaggio semigrasso stagionato | Duclos - ~1 Kg - Formato ~1 Kg,Toma di Gressoney - 1 Kg,,1,,21.49,21.49,,,
+Order,Consegnato,29034,Ferruccio Cassano,Via F. Carcano 13,Saronno,VA,21047,IT,+393485845453,12/01/2025,11/01/2025,ferruccio.cassano@fastwebnet.it,Carta di credito o debito,,,TNT Italy,2,59.55,,,1,WS74897421,14/01/2025
+Item,,29034,,,,,,,,,,,,Provola di Agerola Affumicata - Monti Lattari | Ruocco - 400 gr - Formato 400 gr,Provola - 400 gr,,4,,6.79,27.16,,,
+Order,Consegnato,29033,Simone clerici,via Giovannina odazio 22,Invorio,NO,28045,IT,+393775442516,12/01/2025,09/01/2025,clericisimo96@gmail.com,In contanti alla consegna,,,TNT Italy,3,28.37,,,1,WS74897416,15/01/2025
+Item,,29033,,,,,,,,,,,,Fiordilatte di Agerola - Mozzarella campana dei Monti Lattari | Ruocco - 600 gr - Formato 600 gr,Fiordilatte - 600 gr,,1,,9.69,9.69,,,
+Item,,29033,,,,,,,,,,,,Provola di Agerola Affumicata - Monti Lattari | Ruocco - 400 gr - Formato 400 gr,Provola - 400 gr,,1,,6.79,6.79,,,
+Item,,29033,,,,,,,,,,,,Burro fresco di Agerola - Per colazione | Ruocco - 250 gr - Formato 250 gr,Burro - 250 gr,,1,,3.99,3.99,,,
+Order,Consegnato,29032,Vittorio Campanino,Via Paludetti 29,Treviso,TV,31100,IT,+393287235729,12/01/2025,09/01/2025,campanino3@gmail.com,Carta di credito o debito,,,TNT Italy,5,58.76,,,1,WS74897451,14/01/2025
+Item,,29032,,,,,,,,,,,,Fiordilatte di Agerola - Mozzarella campana dei Monti Lattari | Ruocco - 400 gr - Formato 400 gr,Fiordilatte - 400 gr,,1,,6.79,6.79,,,
+Item,,29032,,,,,,,,,,,,Provola di Agerola Affumicata - Monti Lattari | Ruocco - 600 gr - Formato 600 gr,Provola - 600 gr,,1,,9.69,9.69,,,
+Item,,29032,,,,,,,,,,,,Ricotta di fuscella artigianale fresca di Agerola | Ruocco - 350 gr - Formato 350 gr,Ricotta - 350 gr,,1,,3.59,3.59,,,
+Order,Consegnato,29031,Elisabetta Ribera,Viale dei Colli Portuensi n. 650 Int. D3,Roma,RM,00151,IT,+393482508107,10/01/2025,08/01/2025,rib.elisa@hotmail.it,Carta di credito o debito,,,TNT Italy,1,29.09,,,1,WS74854052,13/01/2025
+Item,,29031,,,,,,,,,,,,Crema con Acido Glicolico al 12% | Dr. Taffi,C-CAG-DT-C1,,1,,23.19,23.19,,,
+Order,Consegnato,29030,Alberto Briani,Via Giuseppe Verdi 5/a,Savignano sul Rubicone,FC,47039,IT,+393278447873,07/01/2025,07/01/2025,briani.alberto@gmail.com,Carta di credito o debito,,,TNT Italy,1,34.89,,,1,WS74684593,13/01/2025
+Order,Consegnato,29029,Pietro Bazzali,Via PapaGiovanni XXIII 40,Villafranca in Lunigiana,MS,54028,IT,+393406684803,06/01/2025,05/01/2025,veronicagenchi@gmail.com,PayPal,,,TNT Italy,3,57.41,,,1,WS74602797,08/01/2025
+Item,,29029,,,,,,,,,,,,Burro fresco di Agerola - Per colazione | Ruocco - 250 gr - Formato 250 gr,Burro - 250 gr,,3,,3.99,11.97,,,
+Item,,29029,,,,,,,,,,,,Fiordilatte di Agerola - Mozzarella campana dei Monti Lattari | Ruocco - 400 gr - Formato 400 gr,Fiordilatte - 400 gr,,5,,6.79,33.95,,,
+Item,,29029,,,,,,,,,,,,Ricotta di fuscella artigianale fresca di Agerola | Ruocco - 350 gr - Formato 350 gr,Ricotta - 350 gr,,1,,3.59,3.59,,,
+Order,Consegnato,29028,davide laudato,Jægersborggade 41,København N,,2200,DK,+4523800115,06/01/2025,04/01/2025,davide@paesanocph.dk,Carta di credito o debito,,,FedEx v1,2,308.57,,,2,284059633020,13/01/2025
+Item,,29028,,,,,,,,,,,,Burro fresco di Agerola - Per colazione | Ruocco - 250 gr - Formato 250 gr,Burro - 250 gr,,1,,,,,,
