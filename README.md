@@ -1,40 +1,81 @@
-# LlamaIndex with Google Gemini
+# Redesigned Carnival
 
-This project demonstrates how to use Google's Gemini LLM with LlamaIndex for querying a LlamaCloud index.
+This project is a Document Chat Assistant that allows users to interact with PDF and CSV documents using a chat interface. The application leverages Google's Gemini LLM and LlamaIndex for querying and retrieving information.
+
+## Features
+
+- **PDF Document Chat Mode**: Interact with PDF documents to extract and summarize information.
+- **CSV Data Chat Mode**: Analyze CSV and Excel files to answer data-related queries.
+- **Feedback System**: Users can provide feedback on the responses to improve the system.
 
 ## Setup
 
-1. Install the required packages:
+### Prerequisites
+
+- Python 3.7 or higher
+- [Streamlit](https://streamlit.io/)
+- [Pandas](https://pandas.pydata.org/)
+- [Langchain](https://github.com/hwchase17/langchain)
+- [Pinecone](https://www.pinecone.io/)
+
+### Installation
+
+1. **Clone the Repository**
+
+   ```bash
+   git clone https://github.com/xnileshtiwari/redesigned-carnival.git
+   cd redesigned-carnival
+   ```
+
+2. **Install Required Packages**
+
+   Use the following command to install the necessary Python packages:
+
    ```bash
    pip install -r requirements.txt
    ```
 
-2. Set up your API keys:
-   - Get a Google API key from [Google AI Studio](https://makersuite.google.com/app/apikey)
-   - Add your API keys to the `.env` file:
-     ```
-     GOOGLE_API_KEY=your_google_api_key_here
-     LLAMA_CLOUD_API_KEY=your_llama_cloud_api_key_here
-     ```
+3. **Set Up Environment Variables**
 
-## Usage
+   Create a `.env` file in the root directory and add your API keys:
 
-Run the test script:
-```bash
-python test.py
-```
+   ```plaintext
+   GOOGLE_API_KEY=your_google_api_key_here
+   PINECONE_API_KEY=your_pinecone_api_key_here
+   COHERE_API_KEY=your_cohere_api_key_here
+   LANGSMITH_API_KEY=your_langsmith_api_key_here
+   
 
-This will:
-1. Configure LlamaIndex to use Google's Gemini Pro model
-2. Connect to your LlamaCloud index
-3. Retrieve information based on your query
-4. Print the response
+   ```
 
-## Troubleshooting
+### Usage
 
-If you encounter errors:
+1. **Run the Application**
 
-1. Make sure your API keys are correctly set in the `.env` file
-2. Ensure you have installed all required packages
-3. Check that your Google API key has access to the Gemini Pro model
-4. Verify that your LlamaCloud index exists and is accessible with your API key 
+   Start the Streamlit app by running:
+
+   ```bash
+   streamlit run chat_ui.py
+   ```
+
+2. **Interact with the App**
+
+   - **PDF Mode**: Select a PDF document from the sidebar and ask questions about its content.
+   - **CSV Mode**: Choose a CSV or Excel file and query the data for insights.
+
+3. **Provide Feedback**
+
+   Use the feedback buttons to like or dislike the responses, helping improve the system.
+
+### Troubleshooting
+
+- Ensure your API keys are correctly set in the `.env` file.
+- Verify that all required packages are installed.
+- Check that your Google API key has access to the Gemini Pro model.
+- Make sure your LlamaCloud index is accessible with your API key.
+
+
+## License
+
+This project is licensed under the MIT License.
+
