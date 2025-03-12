@@ -351,7 +351,7 @@ if (st.session_state.previous_mode != st.session_state.chat_mode or
 # Predefined sample prompts
 pdf_prompts = [
     "📄 What are the payment terms mentioned in the TNT contract?",
-    "📑 Summarize the main points in the agreement",
+    "⛽ What are the Surcharges for fuel?",
     "🔍 Find all references to deadlines in the document",
     "⚖️ What are the legal obligations mentioned?"
 ]
