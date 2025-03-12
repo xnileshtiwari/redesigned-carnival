@@ -199,6 +199,9 @@ if "chat_mode" not in st.session_state:
 if "selected_csv" not in st.session_state:
     st.session_state.selected_csv = None
 
+if "selected_csv_name" not in st.session_state:  # Added to store the CSV file name
+    st.session_state.selected_csv_name = None
+
 if "previous_mode" not in st.session_state:
     st.session_state.previous_mode = "PDF"
 
@@ -227,7 +230,6 @@ pdf_documents = [
     "picking-list by product.pdf",
     "GLS Bergamo International Contract.pdf",
     "Fedex International Contract.pdf"
-
 ]
 
 # Function to get available CSV documents
@@ -337,6 +339,7 @@ with st.sidebar:
             )
             selected_index = csv_names.index(selected_csv_name)
             st.session_state.selected_csv = csv_paths[selected_index]
+            st.session_state.selected_csv_name = selected_csv_name  # Store the file name separately
         else:
             st.warning("No CSV documents found.")
             st.session_state.selected_csv = None
@@ -404,8 +407,9 @@ st.markdown('<div class="chat-container">', unsafe_allow_html=True)
 if st.session_state.chat_mode == "PDF":
     st.info("🔍 Currently in PDF Document Chat Mode")
 else:
-    if st.session_state.selected_csv:
-        csv_name = os.path.basename(st.session_state.selected_csv)
+    if st.session_state.selected_csv is not None:
+        # Use the stored CSV file name instead of os.path.basename on a DataFrame
+        csv_name = st.session_state.selected_csv_name
         st.info(f"📊 Currently analyzing: {csv_name}")
     else:
         st.warning("⚠️ Please select a CSV file from the sidebar")
@@ -475,8 +479,8 @@ if user_input:
             response = get_completion(user_input, thread_id_1)
             status.update(label="✅ Analysis complete", state="complete")
         else:  # CSV mode
-            if st.session_state.selected_csv:
-                status.update(label=f"Analyzing CSV data from {os.path.basename(st.session_state.selected_csv)}...", state="running")
+            if st.session_state.selected_csv is not None:
+                status.update(label=f"Analyzing CSV data from {st.session_state.selected_csv_name}...", state="running")
                 thread_id = "conversation_1"
 
                 response = run_csv_chat_agent(st.session_state.selected_csv, user_input, thread_id)
