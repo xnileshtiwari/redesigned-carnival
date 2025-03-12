@@ -8,3 +8,4 @@ langchain-core
 langchain-community
 langgraph
 langchain_experimental
+tabulate
