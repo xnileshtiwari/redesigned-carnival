@@ -236,7 +236,7 @@ def get_csv_documents():
     csv_path = "all_csv_documents"
     csv_files = []
     for file in os.listdir(csv_path):
-        if file.endswith('.csv'):
+        if file.endswith('.csv', '.xlsx'):
             csv_files.append((file, os.path.join(csv_path, file)))
     return csv_files
 
