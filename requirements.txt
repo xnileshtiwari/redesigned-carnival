@@ -12,3 +12,4 @@ tabulate
 openpyxl
 pinecone 
 langchain_cohere 
+termcolor
