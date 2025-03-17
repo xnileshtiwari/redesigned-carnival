@@ -1,3 +1,4 @@
+import pandas as pd
 import streamlit as st
 import dotenv
 import os
@@ -233,7 +234,7 @@ pdf_documents = [
 # Function to get available CSV documents
 def get_csv_documents():
     # Change this path to where your CSV documents are stored
-    csv_path = "all_csv_documents/"
+    csv_path = "/home/xnileshtiwari/vscode/new-gemini-upload-file/DATABASE2/"
     data_files = []
     for file in os.listdir(csv_path):
         if file.endswith('.csv') or file.endswith('.xlsx'):
@@ -363,6 +364,7 @@ csv_prompts = [
     "📉 What's the trend of sales over time?"
 ]
 
+
 # Display sample prompts based on mode
 st.subheader("Sample Prompts")
 
@@ -395,7 +397,16 @@ if st.session_state.chat_mode == "PDF":
 else:
     if st.session_state.selected_csv:
         csv_name = os.path.basename(st.session_state.selected_csv)
-        st.info(f"📊 Currently analyzing: {csv_name}")
+        def column_names(csv_file):
+            df = pd.read_csv(csv_file)
+            return df.columns.tolist(), df.shape
+
+        column_names, shape = column_names(st.session_state.selected_csv)
+        with st.expander("CSV File Information"):
+            st.warning(f"Column names: {', '.join(column_names)}", icon="ℹ️")
+            st.warning(f"Shape: {shape}", icon="ℹ️")
+        st.info(f"📊 Currently Querying: **{csv_name}**")
+
     else:
         st.warning("⚠️ Please select a CSV file from the sidebar")
 
@@ -460,12 +471,14 @@ if user_input:
     with st.status("Processing your request...", expanded=True) as status:
         # Process based on mode
         if st.session_state.chat_mode == "PDF":
-            status.update(label="Analyzing PDF document...", state="running")
+            status.update(label="Thinking...", state="running")
             response = get_completion(user_input, thread_id_1)
             status.update(label="✅ Analysis complete", state="complete")
         else:  # CSV mode
             if st.session_state.selected_csv:
-                status.update(label=f"Analyzing CSV data from {os.path.basename(st.session_state.selected_csv)}...", state="running")
+                # status.update(label=f"Analyzing CSV data from {os.path.basename(st.session_state.selected_csv)}...", state="running")
+                status.update(label=f"Thinking...", state="running")
+
                 thread_id = "conversation_1"
 
                 response = run_csv_chat_agent(st.session_state.selected_csv, user_input, thread_id)
@@ -474,6 +487,7 @@ if user_input:
                 response = "Please select a CSV file from the sidebar first."
                 status.update(label="⚠️ No CSV file selected", state="error")
     
+
     # Add assistant response to chat
     st.session_state.messages.append({"role": "assistant", "content": response})
     
