@@ -74,7 +74,6 @@ def run_csv_chat_agent(file_path: str, user_question: str, thread_id: str) -> st
 
 
     def get_csv_info():
-    # Check if 'Data_info' column exists in the DataFrame
         if 'Data_info' in df.columns:
             data = df['Data_info'].iloc[0]
             formatted = f"This is CSV file with {data}"
@@ -141,7 +140,7 @@ def run_csv_chat_agent(file_path: str, user_question: str, thread_id: str) -> st
 
         standalone_question = state["standalone_question"]
         response = state["response"]
-        prompt = grade_response_prompt.format(standalone_question=standalone_question, response=response, csv_description=csv_description, attempt_number= attempt_number)
+        prompt = grade_response_prompt.format(standalone_question=standalone_question, response=response, attempt_number= attempt_number)
         grade_response = llm.invoke(prompt).content.strip().lower()
         print(colored(f"Question: {standalone_question}\nResponse: {response}\nGrade: {grade_response}", 'magenta', attrs=['bold']))
         if grade_response == "yes":
