@@ -5,6 +5,8 @@ import os
 import json
 from llm import get_completion
 from csv_agent import run_csv_chat_agent
+import pandas as pd
+import numpy as np
 
 # Load environment variables from a .env file
 dotenv.load_dotenv()
