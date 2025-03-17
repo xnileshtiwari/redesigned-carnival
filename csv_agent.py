@@ -8,6 +8,7 @@ from langchain_experimental.tools import PythonAstREPLTool
 from langchain_core.prompts import ChatPromptTemplate
 from langgraph.graph import StateGraph, END
 from langgraph.checkpoint.memory import MemorySaver
+import numpy as np
 from termcolor import colored
 from prompts import (
     interpret_question_prompt,
@@ -71,13 +72,31 @@ def run_csv_chat_agent(file_path: str, user_question: str, thread_id: str) -> st
     {df.head().to_markdown()}
     """
 
+
+    def get_csv_info():
+    # Check if 'Data_info' column exists in the DataFrame
+        if 'Data_info' in df.columns:
+            data = df['Data_info'].iloc[0]
+            formatted = f"This is CSV file with {data}"
+            return df['Data_info'].iloc[0]
+        else:
+            last_column = df.columns[-1]
+            lst_data =  df[last_column].iloc[0]
+            formatted = f"This is CSV file with {lst_data}"
+            return formatted
+    
+
+    csv_description = f"This is a csv file {get_csv_info()}"
+    print(colored(f"The csv description is: {csv_description}", "red"))
+
+
     # Define node functions
     def interpret_question_node(state: dict) -> dict:
         """Rephrases the user's question based on conversation history."""
         question = state["question"]
         history = state.get("history", [])
         history_str = "\n".join([f"User: {q}\nAssistant: {a}" for q, a in history[-5:]])
-        prompt = interpret_question_prompt.format(history_str=history_str, question=question, df_info=df_info)
+        prompt = interpret_question_prompt.format(history_str=history_str, question=question, df_info=df_info, csv_description=csv_description)
         response = llm.invoke(prompt)
         standalone_question = response.content.strip()
         print(colored(f"Standalone question: {standalone_question}", 'green'))
@@ -91,7 +110,7 @@ def run_csv_chat_agent(file_path: str, user_question: str, thread_id: str) -> st
         history = state.get("history", [])
         history_str = "\n".join([f"User: {q}\nAssistant: {a}" for q, a in history[-5:]])
 
-        prompt = relevance_check_prompt.format(standalone_question=standalone_question, columns=columns_str, history_str=history_str)
+        prompt = relevance_check_prompt.format(standalone_question=standalone_question, columns=columns_str, history_str=history_str, csv_description=csv_description)
         response = llm.invoke(prompt).content.strip().lower()
         is_relevant = response == 'yes'
         print(colored(f"Question relevance: {'Yes' if is_relevant else 'No'}", 'yellow'))
@@ -100,7 +119,7 @@ def run_csv_chat_agent(file_path: str, user_question: str, thread_id: str) -> st
     def generate_query_node(state: dict) -> dict:
         """Generates the initial Python query based on the standalone question."""
         standalone_question = state["standalone_question"]
-        prompt = generate_query_prompt.format(df_info=df_info, standalone_question=standalone_question)
+        prompt = generate_query_prompt.format(df_info=df_info, standalone_question=standalone_question, csv_description=csv_description)
         response = llm.invoke(prompt)
         query = response.content.strip()
         print(colored(f"Generated query: {query}", 'blue'))
@@ -117,9 +136,12 @@ def run_csv_chat_agent(file_path: str, user_question: str, thread_id: str) -> st
 
     def grade_response_node(state: dict) -> dict:
         """Grades whether the response answers the standalone question."""
+        attempt_number = state["attempts"]
+        print(colored(f"Attempt number: {attempt_number}", 'cyan', attrs=['bold']))
+
         standalone_question = state["standalone_question"]
         response = state["response"]
-        prompt = grade_response_prompt.format(standalone_question=standalone_question, response=response)
+        prompt = grade_response_prompt.format(standalone_question=standalone_question, response=response, csv_description=csv_description, attempt_number= attempt_number)
         grade_response = llm.invoke(prompt).content.strip().lower()
         print(colored(f"Question: {standalone_question}\nResponse: {response}\nGrade: {grade_response}", 'magenta', attrs=['bold']))
         if grade_response == "yes":
@@ -136,7 +158,8 @@ def run_csv_chat_agent(file_path: str, user_question: str, thread_id: str) -> st
             df_info=df_info,
             standalone_question=standalone_question,
             previous_query=previous_query,
-            previous_response=previous_response
+            previous_response=previous_response,
+            csv_description=csv_description
         )
         response = llm.invoke(prompt)
         new_query = response.content.strip()
@@ -146,7 +169,7 @@ def run_csv_chat_agent(file_path: str, user_question: str, thread_id: str) -> st
         """Formats the raw response and updates history."""
         question = state["question"]
         response = state["response"]
-        prompt = format_response_prompt.format(question=question, response=response, df_info=df_5_rows)
+        prompt = format_response_prompt.format(question=question, response=response, df_info=df_5_rows, csv_description=csv_description)
         formatted_answer = llm.invoke(prompt).content.strip()
         history = state.get("history", [])
         history.append((question, formatted_answer))
@@ -182,11 +205,15 @@ def run_csv_chat_agent(file_path: str, user_question: str, thread_id: str) -> st
         return {"final_answer": final_answer, "history": history}
 
     # Routing functions
-    max_attempts = 5
+    max_attempts = 7
+
+
 
     def route_after_grade(state: dict) -> str:
         """Decides the next step based on grade and attempts."""
         if state["grade"] == "yes":
+            attempt_number = state["attempts"]
+
             return "format_response"
         elif state["attempts"] < max_attempts:
             return "transform_query"
