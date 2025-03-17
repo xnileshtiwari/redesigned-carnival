@@ -234,7 +234,7 @@ pdf_documents = [
 # Function to get available CSV documents
 def get_csv_documents():
     # Change this path to where your CSV documents are stored
-    csv_path = "/home/xnileshtiwari/vscode/new-gemini-upload-file/DATABASE2/"
+    csv_path = "redesigned-carnival/all_csv_documents"
     data_files = []
     for file in os.listdir(csv_path):
         if file.endswith('.csv') or file.endswith('.xlsx'):
