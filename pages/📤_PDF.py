@@ -1,5 +1,5 @@
 import streamlit as st
-from document_processing import document_chunking_and_uploading_to_vectorstore
+from document_processing.py import document_chunking_and_uploading_to_vectorstore
 
 # Load custom CSS
 def load_custom_css():
