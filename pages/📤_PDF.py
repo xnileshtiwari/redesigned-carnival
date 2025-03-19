@@ -1,12 +1,5 @@
 import sys
 import os
-
-# Debug the path
-parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-print(f"Parent directory: {parent_dir}")
-print(f"sys.path: {sys.path}")
-
-sys.path.append(parent_dir)
 import streamlit as st
 from document_processing import document_chunking_and_uploading_to_vectorstore
 
