@@ -14,3 +14,4 @@ pinecone
 langchain_cohere 
 termcolor
 langchain_pinecone
+pinecone-plugin-inference
