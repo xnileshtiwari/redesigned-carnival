@@ -57,7 +57,7 @@ def retrieve(query: str):
             vector=query_embedding,
             top_k=10,
             include_metadata=True,
-            namespace="Test-1",
+            namespace="Uploaded_document",
         )
         
         # Extract results and metadata
