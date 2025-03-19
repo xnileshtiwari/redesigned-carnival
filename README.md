@@ -55,7 +55,7 @@ This project is a Document Chat Assistant that allows users to interact with PDF
    Start the Streamlit app by running:
 
    ```bash
-   streamlit run chat_ui.py
+   streamlit run 🏠_HOME.py
    ```
 
 2. **Interact with the App**
