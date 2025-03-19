@@ -1,6 +1,12 @@
 import sys
 import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+# Debug the path
+parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+print(f"Parent directory: {parent_dir}")
+print(f"sys.path: {sys.path}")
+
+sys.path.append(parent_dir)
 import streamlit as st
 from document_processing import document_chunking_and_uploading_to_vectorstore
 
@@ -24,5 +30,11 @@ with st.form("pdf_upload_form", clear_on_submit=True):
     if submit_button:
         if uploaded_file is not None:
             with st.spinner("Processing your PDF..."):
-                result = document_chunking_and_uploading_to_vectorstore(uploaded_file)
-                st.write(result)  # Display the result instead of 'None'
+                with tempfile.NamedTemporaryFile(delete=False, suffix=".pdf") as tmp_file:
+                    tmp_file.write(uploaded_file.read())
+                    tmp_file_path = tmp_file.name
+
+                result = document_chunking_and_uploading_to_vectorstore(tmp_file_path, uploaded_file.name)
+                st.success(result)
+        else:
+            st.error("Please upload a PDF file first")
