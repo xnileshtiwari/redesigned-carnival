@@ -8,8 +8,11 @@ from csv_agent import run_csv_chat_agent
 import pandas as pd
 import numpy as np
 
+
 # Load environment variables from a .env file
 dotenv.load_dotenv()
+
+# Load custom CSS
 # Page configuration
 st.set_page_config(
     page_title="Document Chat Assistant",
@@ -18,6 +21,13 @@ st.set_page_config(
 )
 
 thread_id_1 = "conversation_1"
+
+def load_custom_css(file_path):
+    with open(file_path) as f:
+        st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+
+# Apply custom CSS
+load_custom_css('/home/xnileshtiwari/vscode/new-gemini-upload-file/custom.css')
 
 # Function to save feedback to JSON files
 def save_feedback(user_input, assistant_response, feedback_type):
@@ -64,130 +74,6 @@ hide_streamlit_style = """
 </style>
 """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
-
-# Custom styling
-st.markdown("""
-<style>
-    .user-avatar {
-        background-color: #4b8bf4;
-        color: white;
-        padding: 0.5rem;
-        border-radius: 50%;
-        margin-right: 0.5rem;
-        font-weight: bold;
-    }
-    .assistant-avatar {
-        background-color: #ff6b6b;
-        color: white;
-        padding: 0.5rem;
-        border-radius: 50%;
-        margin-right: 0.5rem;
-        font-weight: bold;
-    }
-    .chat-message {
-        margin-bottom: 1rem;
-    }
-    /* Custom styling for buttons */
-    div[data-testid="stButton"] > button {
-        background-color: #f8f9fa;
-        border: 1px solid #e9ecef;
-        border-radius: 8px;
-        color: #495057;
-        font-size: 0.9rem;
-        padding: 0.5rem;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.3s ease;
-    }
-    div[data-testid="stButton"] > button:hover {
-        background-color: #e9ecef;
-        border-color: #dee2e6;
-    }
-    /* Mode selector styling */
-    .mode-selector {
-        display: flex;
-        gap: 10px;
-        margin-bottom: 20px;
-    }
-    .mode-button {
-        padding: 10px 15px;
-        background-color: #f0f2f6;
-        border: 1px solid #d1d5db;
-        border-radius: 8px;
-        font-weight: 500;
-        cursor: pointer;
-        transition: all 0.2s ease;
-        flex: 1;
-        text-align: center;
-    }
-    .mode-button.active {
-        background-color: #4b8bf4;
-        color: white;
-        border-color: #4b8bf4;
-    }
-    /* Chat container styling */
-    .chat-container {
-        background-color: #f9f9f9;
-        border-radius: 10px;
-        padding: 20px;
-        margin-top: 0;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-    /* Document selector styling */
-    .stSelectbox > div > div {
-        border-radius: 8px;
-    }
-    /* PDF Documents list styling */
-    .pdf-list {
-        background-color: #f8f9fa;
-        border-radius: 8px;
-        padding: 10px;
-        margin-top: 10px;
-    }
-    .pdf-list-item {
-        display: flex;
-        align-items: center;
-        padding: 5px 0;
-    }
-    .pdf-list-item svg {
-        margin-right: 8px;
-        color: #4b8bf4;
-    }
-    /* Feedback buttons styling */
-    .feedback-buttons {
-        display: flex;
-        justify-content: flex-end;
-        gap: 8px;
-        margin-top: 5px;
-    }
-    .feedback-btn {
-        background: none;
-        border: none;
-        padding: 5px 10px;
-        font-size: 14px;
-        cursor: pointer;
-        border-radius: 4px;
-        display: inline-flex;
-        align-items: center;
-        color: #6c757d;
-    }
-    .feedback-btn:hover {
-        background-color: #f0f2f6;
-    }
-    .feedback-btn.like:hover {
-        color: #28a745;
-    }
-    .feedback-btn.dislike:hover {
-        color: #dc3545;
-    }
-    .feedback-btn svg {
-        margin-right: 4px;
-    }
-</style>
-""", unsafe_allow_html=True)
 
 # App title with emoji
 st.title("📚 Document Assistant")
@@ -236,7 +122,7 @@ pdf_documents = [
 # Function to get available CSV documents
 def get_csv_documents():
     # Change this path to where your CSV documents are stored
-    csv_path = "all_csv_documents"
+    csv_path = "/home/xnileshtiwari/vscode/new-gemini-upload-file/Updated_CSVs/"
     data_files = []
     for file in os.listdir(csv_path):
         if file.endswith('.csv') or file.endswith('.xlsx'):
@@ -269,7 +155,7 @@ with st.sidebar:
             use_container_width=True,
             type="primary" if st.session_state.chat_mode == "CSV" else "secondary"
         )
-    
+
     # Handle button clicks
     if pdf_button:
         st.session_state.chat_mode = "PDF"
@@ -278,7 +164,8 @@ with st.sidebar:
     if csv_button:
         st.session_state.chat_mode = "CSV"
         st.rerun()
-    
+
+
     # JavaScript for handling mode change
     st.markdown("""
     <script>
