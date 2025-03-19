@@ -122,7 +122,7 @@ pdf_documents = [
 # Function to get available CSV documents
 def get_csv_documents():
     # Change this path to where your CSV documents are stored
-    csv_path = "/home/xnileshtiwari/vscode/new-gemini-upload-file/Updated_CSVs/"
+    csv_path = "Updated_CSVs/"
     data_files = []
     for file in os.listdir(csv_path):
         if file.endswith('.csv') or file.endswith('.xlsx'):
