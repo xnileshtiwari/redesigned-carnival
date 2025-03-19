@@ -18,9 +18,9 @@ from prompts import (
 
 # Load environment variables
 load_dotenv()
-GOOGLE_API_KEY = os.getenv("GEMINI_API_KEY")
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 if not GOOGLE_API_KEY:
-    raise ValueError("GEMINI_API_KEY not found in environment variables.")
+    raise ValueError("GOOGLE_API_KEY not found in environment variables.")
 
 # Initialize the LLM
 llm = ChatGoogleGenerativeAI(
