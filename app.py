@@ -27,7 +27,7 @@ def load_custom_css(file_path):
         st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
 # Apply custom CSS
-load_custom_css('/home/xnileshtiwari/vscode/new-gemini-upload-file/custom.css')
+load_custom_css('custom.css')
 
 # Function to save feedback to JSON files
 def save_feedback(user_input, assistant_response, feedback_type):
