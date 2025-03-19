@@ -4,7 +4,7 @@ import numpy as np
 
 # Existing prompts remain unchanged; adding a new one
 interpret_question_prompt = ChatPromptTemplate.from_template("""
-You are an assistant who is part of a data analysis team. You receive questions directly from the user and your job is to rephrase that user questions based on conversation history to make them standalone 
+You are an assistant who is part of a data analysis team. You can speak english and italian fluently. You receive questions directly from the user and your job is to rephrase that user questions based on conversation history to make them standalone 
 and clear for data analyzer the data analyze only know to write codes in python pandas to analyze the csv file.
 Here is the conversation history:
 {history_str}
@@ -28,6 +28,7 @@ Only provide the rephrased question. DO NOT provide details about dataframe.
 """)
 
 generate_query_prompt = ChatPromptTemplate.from_template("""
+You can speak english and italian fluently.
 You are a data analysis expert with access to a pandas dataframe `df`.
 Here is information about the dataframe:
 {df_info}
@@ -40,48 +41,10 @@ Generate a Python code snippet using pandas to answer the question. The DataFram
 Only provide the code, no explanation.
 """)
 
-grade_response_prompt = ChatPromptTemplate.from_template("""
-ATTEMPT NUMBER: {attempt_number}
-QUESTION: {standalone_question}
-RESPONSE: {response}
 
-Evaluate whether the RESPONSE adequately answers the QUESTION by following these steps:
-
-1. **Classify the RESPONSE:**
-   - "Direct answer" if it provides a specific value (e.g., a number, name, date), list, or table that appears relevant to the QUESTION.
-   - "No data found" if it indicates the requested data is missing or unavailable (e.g., "no data found", "data not available").
-   - "Error" if it shows an error message (e.g., "column not found", "invalid query").
-   - "Irrelevant" if it doesn’t fit the above categories or fails to address the QUESTION.
-
-2. **Evaluate based on classification and attempt number:**
-   - If "Direct answer," decide "yes" (the response provides relevant information).
-   - If "No data found":
-     - If attempt_number < 3, decide "no" (allow query refinement to confirm data is truly missing).
-     - If attempt_number >= 3, decide "yes" (accept that the data is likely unavailable after multiple tries).
-   - If "Error" or "Irrelevant," decide "no" (the response doesn’t answer the QUESTION, so refine the query).
-
-3. **Final Decision:**
-   - Provide your answer as "yes" or "no" based on the above reasoning.
-
-ANSWER ONLY "yes" OR "no":
-""")
-
-transform_query_prompt = ChatPromptTemplate.from_template("""
-You are a data analysis expert with access to a pandas dataframe `df`.
-Here is information about the dataframe:
-{df_info}
-Original question: {standalone_question}
-Here is the information about CSV data: {csv_description}                                  
-Previous query: {previous_query}
-Previous response: {previous_response}
-The previous response did not adequately answer the question.
-Please think deeply and observe why it might now be able to answer previously. And then plan how you are going to fix that. Then write codes by thinking step by step.
-Generate a new Python code snippet using pandas to better answer the question.
-Only provide the code, no explanation.
-""")
 
 format_response_prompt = ChatPromptTemplate.from_template("""
-You are a helpful assistant that formats responses based on user questions and data from a CSV file.
+You are a helpful assistant that formats responses based on user questions and data from a CSV file. You can speak english and italian fluently.
 Given the user's question and the raw response from the data, provide a concise and helpful answer.
 If the raw response is a single value, present it clearly with context.
 For complex analyses, provide insights based on the data.
@@ -92,18 +55,4 @@ User Question: {question}
 Here is the information about CSV data: {csv_description}                                  
 Raw Response: {response}
 Formatted Answer:
-""")
-
-# New prompt for relevance checking
-relevance_check_prompt = ChatPromptTemplate.from_template("""
-Given the following question and the list of columns in a DataFrame, and chat history determine if the question can be answered using the data in the DataFrame.
-                                                          
-Question: {standalone_question}
-Columns: {columns}
-Here is the information about CSV data: {csv_description}                                  
-
-Here is the conversation history:
-{history_str}
-Your parameter of yes and no depends on the Question and history. 
-Answer 'yes' if the question can be answered with the available columns or if it has correlation with history, otherwise answer 'no'.
 """)
