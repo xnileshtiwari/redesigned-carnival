@@ -13,4 +13,3 @@ openpyxl
 pinecone 
 langchain_cohere 
 termcolor
-langchain_pinecone
