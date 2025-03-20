@@ -12,11 +12,6 @@ This project is a Document Chat Assistant that allows users to interact with PDF
 
 ### Prerequisites
 
-- Python 3.7 or higher
-- [Streamlit](https://streamlit.io/)
-- [Pandas](https://pandas.pydata.org/)
-- [Langchain](https://github.com/hwchase17/langchain)
-- [Pinecone](https://www.pinecone.io/)
 
 ### Installation
 
@@ -60,12 +55,7 @@ This project is a Document Chat Assistant that allows users to interact with PDF
 
 2. **Interact with the App**
 
-   - **PDF Mode**: Select a PDF document from the sidebar and ask questions about its content.
-   - **CSV Mode**: Choose a CSV or Excel file and query the data for insights.
 
-3. **Provide Feedback**
-
-   Use the feedback buttons to like or dislike the responses, helping improve the system.
 
 ### Troubleshooting
 
