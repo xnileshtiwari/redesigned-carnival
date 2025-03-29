@@ -3,82 +3,98 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_pinecone import PineconeVectorStore
 from pinecone import Pinecone
 import os
-from langchain_community.document_loaders import PyPDFLoader
-import asyncio
 from dotenv import load_dotenv
 from langchain_cohere import CohereEmbeddings
+from llama_parse import LlamaParse
+from langchain_core.documents import Document as LangchainDocument
 
+# Load environment variables
 load_dotenv()
 start_time = time.time()
 
 def document_chunking_and_uploading_to_vectorstore(filepath, actual_file_name):
-    try:
-        name_space = "Test-1" 
+    """
+    Process a document, extract text from images and tables using LlamaParse,
+    and upload chunks to a Pinecone vector store with metadata.
 
-        embeddings = CohereEmbeddings(
-            model="embed-multilingual-v3.0",
+    Args:
+        filepath (str): Path to the document file.
+        actual_file_name (str): Name of the file to include in metadata.
+
+    Returns:
+        str: Summary of processing statistics or None if an error occurs.
+    """
+    try:
+        # Define namespace for vector store
+        name_space = "Test-1"  # Generate unique ID
+
+        # Initialize embeddings
+        embeddings = CohereEmbeddings(model="embed-multilingual-v3.0")
+
+        # Set up Pinecone vector store
+        pc = Pinecone(api_key=os.environ["PINECONE_API_KEY"])
+        index_name = "italian-pdf-docs"
+        index = pc.Index(index_name)
+        vector_store = PineconeVectorStore(embedding=embeddings, index=index, namespace=name_space)
+
+        # Initialize LlamaParse with advanced parsing instructions
+        parser = LlamaParse(
+            api_key=os.environ["LLAMA_CLOUD_API_KEY"],
+            result_type="markdown", 
+            system_prompt="Extract text from images using multimodal models and include it in the output. Parse tables and texts in images. accurately into markdown format.",
+            verbose=True,
+            language="it", 
+            ocr=True, 
+
         )
 
-        pc = Pinecone(api_key=os.environ["PINECONE_API_KEY"])  # get api key
-        index_name = "italian-pdf-docs"  # get index name
-        index = pc.Index(index_name)  # get index
+        # Load documents using LlamaParse
+        llama_documents = parser.load_data(filepath)
 
-        vector_store = PineconeVectorStore(embedding=embeddings, index=index, namespace=name_space)  # create vector store
+        # Convert LlamaIndex documents to Langchain documents
+        documents = [
+            LangchainDocument(page_content=doc.text, metadata=doc.metadata)
+            for doc in llama_documents
+        ]
 
-        # Extract just the filename from the full filepath
-        filename = os.path.basename(filepath)
+        # Add filename to metadata and verify page numbers
+        for i, doc in enumerate(documents, start=1):
+            doc.metadata["page"] = i  # Assign page number (e.g., 1, 2, 3, ...)
+            doc.metadata["filename"] = actual_file_name  # Add filename to metadata
 
-        # Define document loader
-        loader = PyPDFLoader(filepath)
-        async def load_pages(loader):
-            pages = []
-            async for page in loader.alazy_load():
-                # Adjust the page number to start from 1 instead of 0
-                page.metadata['page'] = page.metadata['page'] + 1
-                # Add extra metadata: source filename only, not the entire path
-                page.metadata["filename"] = actual_file_name
-                print(f"Loaded page {page.metadata['page']} with metadata: {page.metadata}")
-                pages.append(page)
-            return pages
-
-        docs = asyncio.run(load_pages(loader))
-        
-        # Configure text splitter to preserve metadata during splitting
+        # Configure text splitter to preserve metadata
         text_splitter = RecursiveCharacterTextSplitter(
             chunk_size=512,
             chunk_overlap=50,
-            add_start_index=True,  # This will help track chunk positions
+            add_start_index=True
         )
-        
-        all_splits = text_splitter.split_documents(docs)
-        # Verify metadata in splits and ensure 'source' is present
-        for split in all_splits:
-            if 'page' not in split.metadata:
-                print(f"Warning: page number missingn split metadata: {split.metadata}")
-            if 'filename' not in split.metadata:
-                split.metadata["filename"] = filename
-        
-        # Add documents to vector store with metadata
+
+        # Split documents into chunks
+        all_splits = text_splitter.split_documents(documents)
+
+        # Add chunks to vector store
         vector_store.add_documents(documents=all_splits)
-        
-        # Calculate processing time rounded to 3 decimal places
+
+        # Calculate processing time
         processing_time = round(time.time() - start_time, 3)
-        
-        # Return statistics as a formatted string
+
+        # Prepare summary
         info = (
             f"Document Processing Summary:\n"
             f"- Filename: {actual_file_name}\n"
-            f"- Pages Processed: {len(docs)}\n"
+            f"- Pages Processed: {len(documents)}\n"
             f"- Chunks Created: {len(all_splits)}\n"
             f"- Processing Time: {processing_time} seconds"
         )
         return info
+
     except Exception as e:
         print(f"An error occurred: {str(e)}")
         return None
 
-
-# filepath = "Zoning Fedex International Contract.pdf"
-
-# new_file = document_chunking_and_uploading_to_vectorstore(filepath=filepath)
-# print(new_file)
+# # Example usage (uncomment to test)
+# filepath = "path/to/your/document.pdf"
+# actual_file_name = "document.pdf"
+# result = document_chunking_and_uploading_to_vectorstore(filepath, actual_file_name)
+# if result:
+#     print(result)
