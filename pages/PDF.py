@@ -16,12 +16,12 @@ st.title("📤 Upload PDF")
 import tempfile
 
 with st.form("pdf_upload_form", clear_on_submit=True):
-    uploaded_file = st.file_uploader("Choose a PDF file", type="pdf")
+    uploaded_file = st.file_uploader("Choose a file", type=["pdf", "png", "md", "jpg"])
     submit_button = st.form_submit_button("Upload and Process")
 
     if submit_button:
         if uploaded_file is not None:
-            with st.spinner("Processing your PDF..."):
+            with st.spinner("Processing your Document..."):
                 with tempfile.NamedTemporaryFile(delete=False, suffix=".pdf") as tmp_file:
                     tmp_file.write(uploaded_file.read())
                     tmp_file_path = tmp_file.name
@@ -29,4 +29,4 @@ with st.form("pdf_upload_form", clear_on_submit=True):
                 result = document_chunking_and_uploading_to_vectorstore(tmp_file_path, uploaded_file.name)
                 st.success(result)
         else:
-            st.error("Please upload a PDF file first")
+            st.error("Please upload a document first.")
