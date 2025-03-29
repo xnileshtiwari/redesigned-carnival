@@ -13,3 +13,4 @@ openpyxl
 langchain_cohere 
 termcolor
 langchain_pinecone
+llama-parse
