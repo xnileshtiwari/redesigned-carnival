@@ -1,5 +1,3 @@
-# Redesigned Carnival
-
 This project is a Document Chat Assistant that allows users to interact with PDF and CSV documents using a chat interface. The application leverages Google's Gemini LLM and LlamaIndex for querying and retrieving information.
 
 ## Features
